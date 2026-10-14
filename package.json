@@ -1,0 +1,19 @@
+{
+  "name": "jovemoderno-intl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "JOVEMODERNO Technology Company — international site.",
+  "author": "JOVEMODERNO <hello@jovemoderno.com>",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "dev": "npx serve src -l 3000",
+    "preview": "npx serve dist -l 4000"
+  },
+  "devDependencies": {
+    "serve": "^14.2.3"
+  }
+}

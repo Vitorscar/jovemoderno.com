@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Personalizado | JoveModerno</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Jove<span class="logo-accent">Moderno</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#catalogo">Catálogo</a></li>
+                <li><a href="../index.html#precos">Preços</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" style="min-height: 60vh; padding-top: 140px;">
+        <div class="container">
+            <div class="hero-content" style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <span class="badge">✨ EXCLUSIVO</span>
+                <h1>Projeto <span class="gradient-text">Personalizado</span></h1>
+                <p class="hero-subtitle" style="margin: 0 auto 40px;">
+                    Não encontrou o que procura? Vamos criar algo único para o seu negócio.
+                    Desde landing pages até sistemas completos.
+                </p>
+                <button class="btn-primary" style="font-size: 1.1rem; padding: 18px 40px;" onclick="solicitarPersonalizado()">
+                    💬 Solicitar Orçamento no WhatsApp
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="como-funciona" style="padding-top: 40px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">DIFERENCIAIS</span>
+                <h2>Por que escolher personalizado?</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">🎨</div>
+                    <h3>Design Único</h3>
+                    <p>Nada de templates genéricos. Cada pixel pensado para a sua marca.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">⚙️</div>
+                    <h3>Funcionalidades Sob Medida</h3>
+                    <p>Sistemas de agendamento, e-commerce, área de membros, o que você precisar.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">🚀</div>
+                    <h3>Escalabilidade</h3>
+                    <p>Arquitetura pensada para crescer junto com o seu negócio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalogo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">EXEMPLOS</span>
+                <h2>O que já criamos</h2>
+            </div>
+            <div class="templates-grid">
+                <div class="template-card">
+                    <div class="template-info" style="padding: 32px;">
+                        <span class="template-tag">Sistema</span>
+                        <h4>Plataforma EAD</h4>
+                        <p style="color: var(--text-secondary); margin: 12px 0;">Sistema completo de ensino à distância com área de alunos, vídeos, provas e certificados.</p>
+                        <div style="color: var(--accent-light); font-weight: 700;">A partir de R$ 2.500</div>
+                    </div>
+                </div>
+                <div class="template-card">
+                    <div class="template-info" style="padding: 32px;">
+                        <span class="template-tag">E-commerce</span>
+                        <h4>Loja Virtual Completa</h4>
+                        <p style="color: var(--text-secondary); margin: 12px 0;">Carrinho, pagamentos, controle de estoque e painel administrativo integrado.</p>
+                        <div style="color: var(--accent-light); font-weight: 700;">A partir de R$ 1.800</div>
+                    </div>
+                </div>
+                <div class="template-card">
+                    <div class="template-info" style="padding: 32px;">
+                        <span class="template-tag">SaaS</span>
+                        <h4>Sistema de Gestão</h4>
+                        <p style="color: var(--text-secondary); margin: 12px 0;">Dashboard administrativo, relatórios, usuários e permissões personalizadas.</p>
+                        <div style="color: var(--accent-light); font-weight: 700;">A partir de R$ 3.500</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/5561999999999" class="whatsapp-float" target="_blank">
+        <span>💬</span>
+    </a>
+
+    <script src="../js/whatsapp.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

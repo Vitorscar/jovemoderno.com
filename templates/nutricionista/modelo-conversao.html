@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{NOME_PROFISSIONAL}} - Consulta de nutrição com 50% OFF. Vagas limitadas!">
+    <title>{{NOME_PROFISSIONAL}} | Consulta com 50% OFF — Vagas Limitadas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0f0f12;
+            --bg-card: #1a1a22;
+            --bg-elevated: #22222c;
+            --text: #ffffff;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6b6b7b;
+            --accent: #ef4444;
+            --accent-light: #f87171;
+            --accent-dark: #dc2626;
+            --accent-glow: rgba(239, 68, 68, 0.3);
+            --success: #22c55e;
+            --border: rgba(255,255,255,0.06);
+            --shadow: 0 8px 32px rgba(0,0,0,0.4);
+            --radius: 12px;
+            --radius-lg: 20px;
+            --max-width: 900px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        /* DEMO BAR */
+        .demo-bar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 10000;
+            background: #12121a; border-bottom: 1px solid rgba(139,92,246,0.2);
+            padding: 10px 20px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .demo-bar-left { display: flex; align-items: center; gap: 14px; }
+        .demo-back { color: #a0a0b0; font-size: 1.1rem; transition: color 0.2s; }
+        .demo-back:hover { color: #8b5cf6; }
+        .demo-info strong { color: #fff; font-size: 0.9rem; font-weight: 600; }
+        .demo-info span { color: #6b6b7b; font-size: 0.75rem; }
+        .demo-badge {
+            background: rgba(239,68,68,0.15); color: #f87171; padding: 4px 10px;
+            border-radius: 100px; font-size: 0.7rem; font-weight: 600; border: 1px solid rgba(239,68,68,0.2);
+        }
+        .btn-demo {
+            background: linear-gradient(135deg, #8b5cf6, #6366f1); color: #fff;
+            border: none; padding: 10px 22px; border-radius: 8px; font-weight: 600;
+            font-size: 0.85rem; cursor: pointer; transition: all 0.2s;
+        }
+        .btn-demo:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(139,92,246,0.3); }
+
+        /* URGENCY BAR */
+        .urgency-bar {
+            position: fixed; top: 44px; left: 0; right: 0; z-index: 999;
+            background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+            padding: 10px 20px; text-align: center; font-size: 0.85rem; font-weight: 600;
+            animation: pulse-bar 2s infinite;
+        }
+        @keyframes pulse-bar { 0%, 100% { opacity: 1; } 50% { opacity: 0.85; } }
+        .urgency-bar i { margin-right: 6px; }
+        .countdown { display: inline-flex; gap: 4px; margin-left: 8px; }
+        .countdown-item { background: rgba(0,0,0,0.3); padding: 2px 8px; border-radius: 4px; font-variant-numeric: tabular-nums; }
+
+        /* HERO LP */
+        .hero-lp {
+            padding: 140px 1.5rem 60px; max-width: var(--max-width); margin: 0 auto;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3);
+            color: var(--accent-light); padding: 8px 16px; border-radius: 100px;
+            font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .hero-lp h1 {
+            font-size: 2.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -1.5px;
+            margin-bottom: 1rem; max-width: 700px; margin-left: auto; margin-right: auto;
+        }
+        .hero-lp h1 .highlight { color: var(--accent-light); }
+        .hero-lp .sub {
+            font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2rem;
+            max-width: 560px; margin-left: auto; margin-right: auto;
+        }
+        .price-tag {
+            display: inline-flex; align-items: center; gap: 1rem;
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 1rem 2rem; border-radius: var(--radius); margin-bottom: 2rem;
+        }
+        .price-old { text-decoration: line-through; color: var(--text-muted); font-size: 1.1rem; }
+        .price-new { font-size: 2rem; font-weight: 900; color: var(--success); }
+        .price-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .btn-cta {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: #fff; padding: 1.2rem 3rem; border-radius: var(--radius);
+            font-weight: 800; font-size: 1.1rem; border: none; cursor: pointer;
+            transition: all 0.3s; box-shadow: 0 0 40px var(--accent-glow);
+            animation: pulse-cta 2s infinite;
+        }
+        @keyframes pulse-cta { 0%, 100% { box-shadow: 0 0 40px var(--accent-glow); } 50% { box-shadow: 0 0 60px rgba(239,68,68,0.5); } }
+        .btn-cta:hover { transform: translateY(-3px) scale(1.02); }
+        .btn-cta i { font-size: 1.3rem; }
+        .guarantee { margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); }
+        .guarantee i { color: var(--success); margin-right: 4px; }
+
+        /* PROOF BAR */
+        .proof-bar {
+            background: var(--bg-card); border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border); padding: 1.5rem;
+        }
+        .proof-inner {
+            max-width: var(--max-width); margin: 0 auto;
+            display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;
+        }
+        .proof-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); }
+        .proof-item i { color: var(--success); }
+
+        /* SECTIONS */
+        .section-lp { padding: 60px 1.5rem; }
+        .section-inner { max-width: var(--max-width); margin: 0 auto; }
+        .section-label {
+            font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 2px; color: var(--accent-light); margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-size: 2rem; font-weight: 800; letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+        .section-desc { color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem; }
+
+        /* BENEFITS */
+        .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+        .benefit-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 1.5rem; display: flex; gap: 1rem;
+            transition: all 0.3s;
+        }
+        .benefit-item:hover { border-color: rgba(239,68,68,0.3); transform: translateX(4px); }
+        .benefit-icon {
+            width: 44px; height: 44px; min-width: 44px;
+            background: rgba(239,68,68,0.1); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent-light); font-size: 1.1rem;
+        }
+        .benefit-text h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .benefit-text p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+
+        /* VIDEO TESTIMONIALS */
+        .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .video-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); overflow: hidden; transition: all 0.3s;
+        }
+        .video-card:hover { border-color: rgba(239,68,68,0.3); transform: translateY(-4px); }
+        .video-thumb {
+            position: relative; aspect-ratio: 16/9; background: var(--bg-elevated);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .video-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+        .play-btn {
+            position: absolute; width: 56px; height: 56px;
+            background: rgba(239,68,68,0.9); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 1.3rem; transition: all 0.3s;
+            cursor: pointer; border: 3px solid rgba(255,255,255,0.2);
+        }
+        .play-btn:hover { transform: scale(1.1); background: var(--accent); }
+        .video-info { padding: 1rem; }
+        .video-info h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+        .video-info p { font-size: 0.75rem; color: var(--text-muted); }
+        .video-result { display: inline-block; background: rgba(34,197,94,0.1); color: var(--success); padding: 0.2rem 0.6rem; border-radius: 100px; font-size: 0.7rem; font-weight: 700; margin-top: 0.5rem; }
+
+        /* LEAD FORM */
+        .lead-section { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .lead-box {
+            background: var(--bg-elevated); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 2.5rem;
+            max-width: 500px; margin: 0 auto;
+        }
+        .lead-box h3 { font-size: 1.5rem; font-weight: 800; text-align: center; margin-bottom: 0.5rem; }
+        .lead-box p { text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.4rem; }
+        .form-group input, .form-group select {
+            width: 100%; padding: 0.9rem 1rem; background: var(--bg);
+            border: 1px solid var(--border); border-radius: var(--radius);
+            color: var(--text); font-family: inherit; font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(239,68,68,0.1); }
+        .form-group input::placeholder { color: var(--text-muted); }
+        .btn-submit {
+            width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: #fff; border: none; border-radius: var(--radius);
+            font-weight: 800; font-size: 1rem; cursor: pointer;
+            transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+        }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
+        .form-note { text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 1rem; }
+        .form-note i { color: var(--success); margin-right: 4px; }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); margin-bottom: 0.75rem; overflow: hidden;
+        }
+        .faq-question {
+            width: 100%; padding: 1.25rem; background: none; border: none;
+            color: var(--text); font-family: inherit; font-size: 0.95rem;
+            font-weight: 600; text-align: left; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-question:hover { color: var(--accent-light); }
+        .faq-icon { color: var(--text-muted); transition: transform 0.3s; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); color: var(--accent-light); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.3s; color: var(--text-secondary); font-size: 0.9rem; }
+        .faq-item.active .faq-answer { max-height: 200px; padding: 0 1.25rem 1.25rem; }
+
+        /* FINAL CTA */
+        .final-cta { text-align: center; padding: 80px 1.5rem; }
+        .final-cta h2 { font-size: 2.2rem; font-weight: 900; margin-bottom: 1rem; }
+        .final-cta p { color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .scarcity {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2);
+            color: var(--accent-light); padding: 0.75rem 1.5rem; border-radius: 100px;
+            font-weight: 700; font-size: 0.85rem; margin-bottom: 1.5rem;
+        }
+        .scarcity i { animation: pulse-dot 1.5s infinite; }
+
+        /* FOOTER LP */
+        .footer-lp { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; }
+        .footer-lp p { color: var(--text-muted); font-size: 0.8rem; }
+        .footer-lp a { color: var(--accent-light); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-lp { padding-top: 120px; }
+            .hero-lp h1 { font-size: 2rem; }
+            .benefits-grid, .video-grid { grid-template-columns: 1fr; }
+            .price-tag { flex-direction: column; gap: 0.5rem; }
+            .btn-cta { padding: 1rem 2rem; font-size: 1rem; width: 100%; justify-content: center; }
+            .lead-box { padding: 1.5rem; }
+            .demo-bar { flex-wrap: wrap; gap: 6px; padding: 8px 12px; }
+        }
+    </style>
+
+    <!-- META PIXEL (placeholder - substituir pelo ID real) -->
+    <script>
+        !function(f,b,e,v,n,t,s){
+            if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)
+        }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '{{META_PIXEL_ID}}');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{META_PIXEL_ID}}&ev=PageView&noscript=1"/>
+    </noscript>
+<base target="_blank">
+</head>
+<body>
+
+    <!-- DEMO BAR -->
+    <div class="demo-bar">
+        <div class="demo-bar-left">
+            <a href="../../categorias/saude.html" class="demo-back">←</a>
+            <div class="demo-info">
+                <strong>🥗 Nutricionista Conversão</strong>
+                <span>Preview • Catálogo JoveModerno</span>
+            </div>
+            <span class="demo-badge">✓ Landing Page</span>
+            <span class="demo-badge">✓ Leads</span>
+            <span class="demo-badge">✓ Pixel Meta</span>
+        </div>
+        <button class="btn-demo" onclick="queroEsseSite('Nutricionista', 'Conversao', 'R$ 449')">💬 Quero esse site</button>
+    </div>
+
+    <!-- URGENCY BAR -->
+    <div class="urgency-bar">
+        <i class="fas fa-fire"></i>
+        PROMOÇÃO POR TEMPO LIMITADO — Restam apenas 
+        <span class="countdown">
+            <span class="countdown-item" id="cd-hours">04</span>:
+            <span class="countdown-item" id="cd-minutes">32</span>:
+            <span class="countdown-item" id="cd-seconds">18</span>
+        </span>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero-lp">
+        <div class="hero-badge">🔥 Promoção de Lançamento</div>
+        <h1>Consulta de Nutrição com <span class="highlight">50% OFF</span> — Por tempo limitado</h1>
+        <p class="sub">Avaliação completa + Plano alimentar personalizado + Acompanhamento por 30 dias. Resultados garantidos ou seu dinheiro de volta.</p>
+
+        <div class="price-tag">
+            <span class="price-old">De R$ 400</span>
+            <span class="price-new">R$ 197</span>
+            <span class="price-label">Única vez</span>
+        </div>
+
+        <a href="#formulario" class="btn-cta"><i class="fab fa-whatsapp"></i> Quero garantir minha vaga</a>
+        <p class="guarantee"><i class="fas fa-shield-alt"></i> 7 dias de garantia incondicional</p>
+    </section>
+
+    <!-- PROOF -->
+    <div class="proof-bar">
+        <div class="proof-inner">
+            <div class="proof-item"><i class="fas fa-check-circle"></i> +{{NUM_PACIENTES}} pacientes atendidos</div>
+            <div class="proof-item"><i class="fas fa-check-circle"></i> {{AVALIACAO}}★ avaliação média</div>
+            <div class="proof-item"><i class="fas fa-check-circle"></i> {{ANOS_EXP}}+ anos de experiência</div>
+            <div class="proof-item"><i class="fas fa-check-circle"></i> 100% online</div>
+        </div>
+    </div>
+
+    <!-- BENEFITS -->
+    <section class="section-lp">
+        <div class="section-inner">
+            <div class="section-label">O que você recebe</div>
+            <h2 class="section-title">Tudo que você precisa para transformar seu corpo</h2>
+            <p class="section-desc">Um método completo, testado e aprovado por centenas de pacientes.</p>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <div class="benefit-text"><h4>Avaliação Completa</h4><p>Análise detalhada do seu perfil, rotina, objetivos e histórico alimentar.</p></div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-utensils"></i></div>
+                    <div class="benefit-text"><h4>Plano Alimentar</h4><p>Cardápio 100% personalizado, flexível e adaptado ao seu dia a dia.</p></div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="benefit-text"><h4>Suporte no WhatsApp</h4><p>Tire dúvidas e receba ajustes em tempo real durante 30 dias.</p></div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="benefit-text"><h4>Acompanhamento Semanal</h4><p>Monitoramento de peso, medidas e evolução com relatórios.</p></div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-book"></i></div>
+                    <div class="benefit-text"><h4>Guia de Receitas</h4><p>E-book com 50+ receitas rápidas, práticas e deliciosas.</p></div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-infinity"></i></div>
+                    <div class="benefit-text"><h4>Acesso Vitalício</h4><p>Guarde seu plano e consulte sempre que precisar, para sempre.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO TESTIMONIALS -->
+    <section class="section-lp" style="background: var(--bg-card); border-top: 1px solid var(--border);">
+        <div class="section-inner">
+            <div class="section-label">Depoimentos em Vídeo</div>
+            <h2 class="section-title">Veja quem já transformou sua vida</h2>
+            <p class="section-desc">Pacientes reais compartilham seus resultados.</p>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="{{VIDEO_THUMB_1}}" alt="Depoimento" onerror="this.src='https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400'">
+                        <div class="play-btn" onclick="openVideo('{{VIDEO_URL_1}}')"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>{{VIDEO_NOME_1}}</h4>
+                        <p>Perdeu 12kg em 3 meses</p>
+                        <span class="video-result">-12kg</span>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="{{VIDEO_THUMB_2}}" alt="Depoimento" onerror="this.src='https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400'">
+                        <div class="play-btn" onclick="openVideo('{{VIDEO_URL_2}}')"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>{{VIDEO_NOME_2}}</h4>
+                        <p>Ganhou 6kg de massa magra</p>
+                        <span class="video-result">+6kg</span>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumb">
+                        <img src="{{VIDEO_THUMB_3}}" alt="Depoimento" onerror="this.src='https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400'">
+                        <div class="play-btn" onclick="openVideo('{{VIDEO_URL_3}}')"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>{{VIDEO_NOME_3}}</h4>
+                        <p>Reeducação alimentar completa</p>
+                        <span class="video-result">Hábitos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEAD FORM -->
+    <section class="section-lp lead-section" id="formulario">
+        <div class="section-inner">
+            <div class="lead-box">
+                <h3>Garanta sua vaga agora</h3>
+                <p>Preencha seus dados e entraremos em contato em até 2 horas.</p>
+                <form id="leadForm" onsubmit="handleLead(event)">
+                    <div class="form-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="tel" id="whatsapp" placeholder="(61) 99999-9999" maxlength="15" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="objetivo">Seu objetivo principal</label>
+                        <select id="objetivo" required>
+                            <option value="">Selecione...</option>
+                            <option value="emagrecer">Emagrecer</option>
+                            <option value="ganhar">Ganhar massa muscular</option>
+                            <option value="saude">Melhorar saúde/energia</option>
+                            <option value="gestacao">Gestação/pós-parto</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit"><i class="fab fa-whatsapp"></i> Quero minha consulta com 50% OFF</button>
+                </form>
+                <p class="form-note"><i class="fas fa-lock"></i> Seus dados estão seguros. Não enviamos spam.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-lp">
+        <div class="section-inner">
+            <div class="section-label">Dúvidas</div>
+            <h2 class="section-title">Perguntas frequentes</h2>
+            <div class="faq-item active">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>A consulta é realmente online?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer"><p>Sim! Toda a consulta é feita por videochamada. Você recebe o link após confirmar o agendamento. Funciona no celular ou computador.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Em quanto tempo vejo resultados?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer"><p>A maioria dos pacientes sente mais disposição na primeira semana. Resultados visíveis de peso/medidas aparecem entre 15-30 dias.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Preciso passar fome?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer"><p>De forma alguma! Nossos planos são baseados em alimentos saciantes e nutritivos. Você come bem e perde peso ao mesmo tempo.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Qual a garantia?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer"><p>Você tem 7 dias de garantia incondicional. Se não ficar satisfeito, devolvemos 100% do seu dinheiro. Sem perguntas.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Quantas vagas restam?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer"><p>Esta promoção é válida para apenas 20 novos pacientes. Atualmente restam <strong id="vagasRestantes">7</strong> vagas.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="scarcity"><i class="fas fa-exclamation-circle"></i> Apenas <strong id="vagasFinal">7</strong> vagas com 50% OFF</div>
+        <h2>Não deixe essa oportunidade passar</h2>
+        <p>Centenas de pessoas já transformaram seus corpos. Agora é a sua vez. Garanta sua vaga antes que acabe.</p>
+        <a href="#formulario" class="btn-cta"><i class="fab fa-whatsapp"></i> Quero minha consulta com 50% OFF</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-lp">
+        <p>© 2026 {{NOME_PROFISSIONAL}} — {{CRN}} | <a href="https://jovemoderno.com" target="_blank">Site por JoveModerno</a></p>
+        <p style="margin-top: 0.5rem;">Esta página é protegida por reCAPTCHA e sujeita às políticas de privacidade do Google.</p>
+    </footer>
+
+    <script>
+        // CONFIG
+        const CONFIG = { numero: "5561999999999", nomeEmpresa: "JoveModerno", vendedor: "Vitor" };
+        function queroEsseSite(categoria, modelo, valor) {
+            const msg = `Olá ${CONFIG.vendedor}! 👋
+
+Quero contratar este site:
+
+📁 Categoria: ${categoria}
+🎨 Modelo: ${modelo}
+💰 Valor: ${valor}
+
+Vi no catálogo da ${CONFIG.nomeEmpresa}.`;
+            window.open(`https://wa.me/${CONFIG.numero}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // COUNTDOWN
+        function updateCountdown() {
+            const now = new Date();
+            const end = new Date();
+            end.setHours(23, 59, 59, 999);
+            const diff = end - now;
+            const h = Math.floor(diff / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+            document.getElementById('cd-minutes').textContent = String(m).padStart(2, '0');
+            document.getElementById('cd-seconds').textContent = String(s).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // VAGAS (diminui a cada refresh simulado)
+        let vagas = 7;
+        function updateVagas() {
+            document.getElementById('vagasRestantes').textContent = vagas;
+            document.getElementById('vagasFinal').textContent = vagas;
+        }
+        updateVagas();
+
+        // FAQ
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const wasActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!wasActive) item.classList.add('active');
+        }
+
+        // LEAD FORM
+        function handleLead(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const email = document.getElementById('email').value;
+            const objetivo = document.getElementById('objetivo').value;
+
+            // Track Meta Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+                fbq('track', 'CompleteRegistration');
+            }
+
+            const msg = `Olá! Quero garantir minha vaga na promoção de 50% OFF.
+
+Nome: ${nome}
+WhatsApp: ${whatsapp}
+Email: ${email}
+Objetivo: ${objetivo}
+
+Aguardo retorno!`;
+            window.open(`https://wa.me/{{WHATSAPP_NUM}}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // VIDEO
+        function openVideo(url) {
+            if (url && !url.includes('{{')) {
+                window.open(url, '_blank');
+            } else {
+                alert('Vídeo em breve! Entre em contato pelo WhatsApp para ver depoimentos.');
+            }
+        }
+
+        // MÁSCARA WHATSAPP
+        document.getElementById('whatsapp').addEventListener('input', function(e) {
+            let v = e.target.value.replace(/\D/g, '');
+            if (v.length <= 11) {
+                v = v.replace(/^(\d{2})(\d)/g, '($1) $2');
+                v = v.replace(/(\d)(\d{4})$/, '$1-$2');
+                e.target.value = v;
+            }
+        });
+
+        // SMOOTH SCROLL
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commerce X — Carrinho</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animacoes.css">
+    <link rel="stylesheet" href="css/carrinho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="page-carrinho">
+    <nav class="navbar glass" id="navbar">
+        <div class="nav-left">
+            <a href="nicho.html" class="nav-back">
+                <i class="fas fa-arrow-left"></i> <span>Continuar Comprando</span>
+            </a>
+            <span class="nav-logo-sm">Commerce<span class="logo-highlight">X</span></span>
+        </div>
+        <div class="nav-right">
+            <button class="btn-icon theme-toggle" id="themeToggle" title="Modo escuro">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="carrinho-main" id="carrinhoMain">
+        <h1 class="carrinho-title reveal">Meu Carrinho</h1>
+        <div class="carrinho-container reveal" id="carrinhoContainer">
+            <div class="carrinho-empty-state" id="carrinhoEmpty">
+                <i class="fas fa-shopping-bag"></i>
+                <h2>Seu carrinho está vazio</h2>
+                <p>Adicione produtos para começar suas compras.</p>
+                <a href="nicho.html" class="btn-premium">Ver Produtos</a>
+            </div>
+            <div class="carrinho-grid" id="carrinhoGrid" style="display:none;">
+                <div class="carrinho-itens" id="carrinhoItens"></div>
+                <div class="carrinho-resumo glass-heavy" id="carrinhoResumo">
+                    <h3>Resumo do Pedido</h3>
+                    <div class="resumo-linha"><span>Subtotal</span><span id="resSubtotal">R$ 0,00</span></div>
+                    <div class="resumo-linha"><span>Frete</span><span id="resFrete">Calculando...</span></div>
+                    <div class="resumo-total"><span>Total</span><span id="resTotal">R$ 0,00</span></div>
+                    <input type="text" class="cep-input" id="cepInput" placeholder="CEP para cálculo de frete" maxlength="9">
+                    <button class="btn-premium-outline full-width btn-sm" id="calcFrete">Calcular Frete</button>
+                    <span class="frete-result" id="freteResult"></span>
+                    <button class="btn-whatsapp full-width mt-md" id="btnFinalizarWhatsapp">
+                        <i class="fab fa-whatsapp"></i> Finalizar pelo WhatsApp
+                    </button>
+                    <a href="nicho.html" class="btn-outline full-width mt-sm">
+                        Continuar Comprando
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/transicoes.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/carrinho.js"></script>
+</body>
+</html>

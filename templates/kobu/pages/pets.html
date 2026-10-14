@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets — Kobu</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="app-body">
+    <div id="sidebar-container"></div>
+    <main class="main-content">
+        <header class="topbar">
+            <button id="sidebar-toggle" class="btn-icon" aria-label="Menu">☰</button>
+            <h1 class="page-title">Meus Pets</h1>
+            <button id="btn-add-pet" class="btn-primary">+ Novo Pet</button>
+        </header>
+        <div class="content-area">
+            <div class="search-filter-bar">
+                <input type="text" id="search-pets" class="input-search" placeholder="Buscar pets...">
+                <select id="filter-species" class="input-select">
+                    <option value="">Todas espécies</option>
+                    <option value="Cão">Cão</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Ave">Ave</option>
+                    <option value="Peixe">Peixe</option>
+                    <option value="Roedor">Roedor</option>
+                    <option value="Réptil">Réptil</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+            <div id="pets-grid" class="pets-grid">
+                <div class="loading-spinner">Carregando...</div>
+            </div>
+        </div>
+    </main>
+    <div id="modal-container"></div>
+    <div id="toast-container"></div>
+    <script src="../js/storage.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/pets.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

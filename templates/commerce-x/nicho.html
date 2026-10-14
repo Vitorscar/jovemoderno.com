@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commerce X — Catálogo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animacoes.css">
+    <link rel="stylesheet" href="css/nicho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="page-nicho">
+    <nav class="navbar glass" id="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon"><i class="fas fa-cube"></i></span>
+                <span class="logo-text">Commerce<span class="logo-highlight">X</span></span>
+            </a>
+            <button class="btn-niche-switch" onclick="window.location.href='index.html'" title="Trocar nicho">
+                <i class="fas fa-th-large"></i> <span class="btn-niche-label">Nichos</span>
+            </button>
+        </div>
+        <div class="nav-center">
+            <div class="search-box glass-inner">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Buscar produtos..." class="search-input">
+                <button class="search-clear" id="searchClear" style="display:none;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="btn-icon theme-toggle" id="themeToggle" title="Modo escuro">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="btn-icon cart-trigger" id="cartTrigger" title="Carrinho">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge pulse-badge" id="cartBadge">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <aside class="cart-sidebar glass-heavy" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Meu Carrinho</h3>
+            <button class="btn-close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty">Seu carrinho está vazio.</p>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-summary">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">R$ 0,00</span>
+            </div>
+            <div class="cart-summary">
+                <span>Frete</span>
+                <span id="cartShipping">Grátis</span>
+            </div>
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">R$ 0,00</span>
+            </div>
+            <a href="carrinho.html" class="btn-premium full-width">Ver Carrinho</a>
+            <button class="btn-whatsapp full-width mt-sm" id="cartWhatsapp">
+                <i class="fab fa-whatsapp"></i> Finalizar pelo WhatsApp
+            </button>
+        </div>
+    </aside>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <main>
+        <section class="hero-nicho" id="heroNicho">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-badge-nicho" id="heroBadge"></span>
+                <h1 class="hero-heading reveal" id="heroHeading"></h1>
+                <p class="hero-desc reveal" id="heroDesc"></p>
+                <button class="btn-premium reveal" onclick="document.getElementById('categorias').scrollIntoView({behavior:'smooth'})">
+                    Explorar Categorias <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="categorias-section reveal" id="categorias">
+            <h2 class="section-title">Categorias</h2>
+            <div class="categorias-grid" id="categoriasGrid"></div>
+        </section>
+
+        <section class="produtos-section reveal">
+            <div class="section-header">
+                <h2 class="section-title">Produtos em Destaque</h2>
+                <div class="filter-tags" id="filterTags"></div>
+            </div>
+            <div class="produtos-grid" id="produtosGrid">
+                <!-- Skeleton loading enquanto carrega -->
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+            <div class="no-results" id="noResults" style="display:none;">
+                <i class="fas fa-search"></i>
+                <p>Nenhum produto encontrado para "<span id="searchTermDisplay"></span>"</p>
+            </div>
+        </section>
+
+        <section class="banner-secundario reveal" id="bannerSecundario">
+            <div class="banner-content">
+                <h2 id="bannerSecTitulo"></h2>
+                <p id="bannerSecDesc"></p>
+                <button class="btn-premium-outline" onclick="window.location.href='index.html'">
+                    Conhecer outros nichos <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-nicho glass">
+        <p>© 2026 <strong>Commerce X</strong> by Jovemoderno — Template Comercial Multi-Nicho Premium</p>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/transicoes.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/nicho.js"></script>
+</body>
+</html>

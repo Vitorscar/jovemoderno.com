@@ -1,0 +1,34 @@
+:: Backups e cópias locais
+_backup-*/
+_source/
+
+:: Build
+dist/
+*.min.js
+*.min.css
+*.terser.js
+
+:: Dependências
+node_modules/
+package-lock.json
+
+:: Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+:: Editor
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+:: Logs
+*.log
+npm-debug.log*
+
+:: Env
+.env
+.env.local

@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Aura — Modelo para Dermatologia | JOVEMODERNO</title>
+<meta name="description" content="Modelo profissional para dermatologistas e clínicas de estética. Design premium, agendamento online, antes/depois interativo e depoimentos. Pronto para personalizar.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   Clínica Aura — Modelo de site (dermatologia)
+   Design por JOVEMODERNO
+   ========================================================= */
+:root{
+  --primary:#0d414f;
+  --primary-light:#1a5a6b;
+  --accent:#9a6748;
+  --accent-light:#b8805e;
+  --gold:#c9a96e;
+  --dark:#0a0a0f;
+  --dark-card:#111118;
+  --glass:rgba(255,255,255,0.08);
+  --glass-border:rgba(255,255,255,0.15);
+  --text:#e8e8e8;
+  --text-muted:#888;
+  --text-light:#fff;
+  --shadow:0 25px 50px -12px rgba(0,0,0,0.5);
+  --shadow-glow:0 0 40px rgba(154,103,72,0.3);
+  --demo-h:40px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(80px + var(--demo-h))}
+body{
+  font-family:'Raleway',sans-serif;
+  background:var(--dark);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.glass{
+  background:var(--glass);
+  backdrop-filter:blur(15px);
+  -webkit-backdrop-filter:blur(15px);
+  border:1px solid var(--glass-border);
+  border-radius:20px;
+}
+.glass-strong{
+  background:rgba(13,65,79,0.6);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:24px;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+
+/* ---------- Demo banner ---------- */
+.demo-banner{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:var(--demo-h);
+  z-index:2000;
+  background:linear-gradient(90deg,#1a1218,#2a1e26,#1a1218);
+  border-bottom:1px solid rgba(201,169,110,.25);
+  display:flex;align-items:center;justify-content:center;
+  gap:14px;
+  padding:0 44px 0 16px;
+  font:600 .78rem 'Montserrat',sans-serif;
+  color:var(--gold);
+  box-shadow:0 4px 20px rgba(0,0,0,.5);
+}
+.demo-banner strong{
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.68rem;
+  padding:3px 10px;
+  border:1px solid rgba(201,169,110,.4);
+  border-radius:50px;
+  color:var(--gold);
+}
+.demo-banner span{color:#c9c9c9}
+.demo-banner a{
+  color:var(--gold);
+  border-bottom:1px solid transparent;
+  transition:border-color .2s;
+}
+.demo-banner a:hover{border-color:var(--gold)}
+.demo-banner button{
+  position:absolute;
+  right:12px;top:50%;
+  transform:translateY(-50%);
+  width:24px;height:24px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  color:var(--gold);
+  opacity:.7;
+}
+.demo-banner button:hover{opacity:1;background:rgba(201,169,110,.1)}
+@media(max-width:640px){
+  .demo-banner{gap:8px;font-size:.68rem;padding:0 44px 0 10px}
+  .demo-banner span.hide-mobile{display:none}
+}
+
+/* ---------- Navbar ---------- */
+.navbar{
+  position:fixed;
+  top:var(--demo-h);left:0;right:0;
+  z-index:1000;
+  padding:1rem 2rem;
+  transition:all .4s ease;
+}
+.navbar.scrolled{
+  background:rgba(10,10,15,0.85);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--glass-border);
+  padding:.8rem 2rem;
+}
+.nav-container{
+  max-width:1400px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+}
+.logo{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:1.5rem;
+  color:var(--text-light);
+  letter-spacing:-.5px;
+}
+.logo span{color:var(--accent)}
+.nav-links{
+  display:flex;
+  gap:2.5rem;
+  list-style:none;
+  align-items:center;
+}
+.nav-links a{
+  color:var(--text);
+  font-weight:500;
+  font-size:.9rem;
+  transition:color .3s;
+  position:relative;
+}
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;left:0;
+  width:0;height:2px;
+  background:var(--accent);
+  transition:width .3s;
+}
+.nav-links a:hover{color:var(--text-light)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  background:var(--accent);
+  color:#fff;
+  padding:.7rem 1.5rem;
+  border-radius:50px;
+  font-weight:600;
+  font-size:.85rem;
+  transition:all .3s;
+  white-space:nowrap;
+}
+.nav-cta:hover{
+  background:var(--accent-light);
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-glow);
+}
+.mobile-toggle{display:none;font-size:1.5rem;color:var(--text-light);cursor:pointer}
+
+/* ---------- Hero ---------- */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  padding:calc(6rem + var(--demo-h)) 2rem 4rem;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,var(--dark) 0%,var(--primary) 50%,var(--dark) 100%);
+  opacity:.3;
+}
+.hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.particle{
+  position:absolute;
+  border-radius:50%;
+  background:radial-gradient(circle,var(--accent) 0%,transparent 70%);
+  opacity:.15;
+  animation:float 20s infinite ease-in-out;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-30px) scale(1.1)}
+}
+.hero-container{
+  max-width:1400px;
+  margin:0 auto;
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+.hero-content h1{
+  font-family:'Montserrat',sans-serif;
+  font-size:3.5rem;
+  font-weight:800;
+  line-height:1.1;
+  color:var(--text-light);
+  margin-bottom:1.5rem;
+}
+.hero-content h1 .highlight{color:var(--accent)}
+.hero-subtitle{
+  font-size:1.2rem;
+  color:var(--text-muted);
+  margin-bottom:2rem;
+  max-width:500px;
+}
+.hero-badges{display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
+.badge{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.5rem 1rem;
+  border-radius:50px;
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  font-size:.85rem;
+  color:var(--text-light);
+}
+.badge svg{width:18px;height:18px;color:var(--gold)}
+.hero-cta-group{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+  padding:1rem 2.5rem;
+  border-radius:50px;
+  font-weight:600;
+  transition:all .3s;
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-size:1rem;
+  border:0;
+  cursor:pointer;
+}
+.btn-primary:hover{
+  background:var(--accent-light);
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-glow);
+}
+.btn-secondary{
+  background:transparent;
+  color:var(--text-light);
+  padding:1rem 2.5rem;
+  border-radius:50px;
+  font-weight:600;
+  border:1px solid var(--glass-border);
+  transition:all .3s;
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  cursor:pointer;
+  font-size:1rem;
+}
+.btn-secondary:hover{
+  background:var(--glass);
+  border-color:var(--accent);
+}
+.hero-image-wrapper{position:relative;display:flex;justify-content:center}
+.hero-image-frame{
+  position:relative;
+  width:450px;
+  height:550px;
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:linear-gradient(160deg,var(--primary) 0%,var(--dark) 100%);
+}
+.hero-image-frame::before{
+  content:'';
+  position:absolute;
+  inset:-3px;
+  border-radius:33px;
+  padding:3px;
+  background:linear-gradient(135deg,var(--accent),var(--gold),var(--accent));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  opacity:.6;
+  z-index:1;
+  pointer-events:none;
+}
+.img-ph{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:.6rem;
+  background:linear-gradient(160deg,var(--primary) 0%,var(--dark) 100%);
+  color:rgba(201,169,110,.55);
+  font:600 .78rem 'Montserrat',sans-serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  position:relative;
+  overflow:hidden;
+}
+.img-ph::before{
+  content:'';
+  position:absolute;
+  inset:24px;
+  border:1px dashed rgba(201,169,110,.3);
+  border-radius:14px;
+  pointer-events:none;
+}
+.img-ph svg{width:52px;height:52px;opacity:.6;color:var(--accent)}
+.hero-image-frame .img-ph{position:absolute;inset:0}
+.hero-float-card{
+  position:absolute;
+  bottom:30px;left:-30px;
+  padding:1rem 1.5rem;
+  animation:floatCard 4s ease-in-out infinite;
+  z-index:2;
+}
+@keyframes floatCard{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+.hero-float-card-2{
+  position:absolute;
+  top:60px;right:-20px;
+  padding:.8rem 1.2rem;
+  animation:floatCard 4s ease-in-out infinite 1s;
+  z-index:2;
+}
+.hero-float-card .fc-num{font-weight:700;color:#fff;font-size:1.1rem}
+.hero-float-card .fc-lbl{font-size:.85rem;color:var(--text-muted)}
+.hero-float-card-2 .fc-num{font-weight:700;color:var(--gold);font-size:1.2rem}
+.hero-float-card-2 .fc-lbl{font-size:.8rem;color:var(--text-muted)}
+
+/* ---------- Stats ---------- */
+.stats-section{padding:4rem 2rem;position:relative}
+.stats-container{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:2rem;
+}
+.stat-card{
+  text-align:center;
+  padding:2rem;
+  transition:all .3s;
+}
+.stat-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--accent);
+  box-shadow:var(--shadow-glow);
+}
+.stat-number{
+  font-family:'Montserrat',sans-serif;
+  font-size:3rem;
+  font-weight:800;
+  color:var(--accent);
+  line-height:1;
+}
+.stat-label{font-size:.9rem;color:var(--text-muted);margin-top:.5rem}
+.stat-icon{
+  width:50px;height:50px;
+  margin:0 auto 1rem;
+  background:var(--glass);
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold);
+  font-size:1.5rem;
+}
+
+/* ---------- Section ---------- */
+.section{padding:6rem 2rem;position:relative}
+.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}
+.section-tag{
+  display:inline-block;
+  padding:.4rem 1rem;
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:50px;
+  font-size:.8rem;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-weight:600;
+  margin-bottom:1rem;
+}
+.section-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:2.5rem;
+  font-weight:700;
+  color:var(--text-light);
+  margin-bottom:1rem;
+}
+.section-subtitle{color:var(--text-muted);font-size:1.1rem}
+
+/* ---------- Team ---------- */
+.team-grid{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:3rem;
+}
+.doctor-card{
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  transition:all .4s ease;
+}
+.doctor-card:hover{
+  transform:translateY(-10px);
+  box-shadow:var(--shadow-glow);
+  border-color:var(--accent);
+}
+.doctor-card-inner{
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
+}
+.doctor-card-img{
+  width:100%;
+  height:400px;
+  object-fit:cover;
+  transition:transform .5s ease;
+  font-size:0;
+}
+.doctor-card:hover .doctor-card-img{transform:scale(1.05)}
+.doctor-card-overlay{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:2rem;
+  background:linear-gradient(transparent,rgba(10,10,15,0.95));
+}
+.doctor-card-name{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--text-light);
+  margin-bottom:.3rem;
+}
+.doctor-card-role{
+  color:var(--accent);
+  font-weight:600;
+  font-size:.9rem;
+  margin-bottom:.5rem;
+}
+.doctor-card-badges{display:flex;gap:.5rem;flex-wrap:wrap}
+.doctor-card-badge{
+  padding:.3rem .8rem;
+  border-radius:50px;
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  font-size:.75rem;
+  color:var(--text-light);
+}
+.doctor-card-rating{display:flex;align-items:center;gap:.5rem;margin-top:.8rem}
+.stars{color:var(--gold);font-size:1rem}
+.rating-text{font-size:.85rem;color:var(--text-muted)}
+.doctor-card-cta{
+  margin-top:1rem;
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  color:var(--accent);
+  font-weight:600;
+  font-size:.9rem;
+  transition:gap .3s;
+}
+.doctor-card:hover .doctor-card-cta{gap:1rem}
+
+/* ---------- Modal ---------- */
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(0,0,0,0.8);
+  backdrop-filter:blur(10px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+  opacity:0;
+  transition:opacity .3s;
+}
+.modal-overlay.active{display:flex;opacity:1}
+.modal-content{
+  max-width:900px;
+  width:100%;
+  max-height:90vh;
+  overflow-y:auto;
+  position:relative;
+  animation:modalIn .4s ease;
+}
+@keyframes modalIn{
+  from{transform:scale(.9) translateY(20px);opacity:0}
+  to{transform:scale(1) translateY(0);opacity:1}
+}
+.modal-close{
+  position:absolute;
+  top:1rem;right:1rem;
+  z-index:10;
+  width:40px;height:40px;
+  border-radius:50%;
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  color:var(--text-light);
+  font-size:1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all .3s;
+  cursor:pointer;
+}
+.modal-close:hover{background:var(--accent);border-color:var(--accent)}
+.modal-body{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:0;
+  border-radius:24px;
+  overflow:hidden;
+}
+.modal-img{width:100%;height:100%;object-fit:cover;min-height:500px;font-size:0}
+.modal-info{padding:2.5rem;background:var(--dark-card)}
+.modal-name{
+  font-family:'Montserrat',sans-serif;
+  font-size:2rem;
+  font-weight:700;
+  color:var(--text-light);
+  margin-bottom:.5rem;
+}
+.modal-role{color:var(--accent);font-weight:600;margin-bottom:1rem}
+.modal-creds{display:flex;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.modal-cred{
+  padding:.4rem 1rem;
+  border-radius:50px;
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  font-size:.8rem;
+  color:var(--text-light);
+}
+.modal-section-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.1rem;
+  font-weight:600;
+  color:var(--text-light);
+  margin:1.5rem 0 .8rem;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+}
+.modal-section-title::before{
+  content:'';
+  width:4px;height:20px;
+  background:var(--accent);
+  border-radius:2px;
+}
+.modal-list{list-style:none;padding:0}
+.modal-list li{
+  padding:.6rem 0;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  display:flex;
+  align-items:flex-start;
+  gap:.8rem;
+  color:var(--text);
+  font-size:.9rem;
+}
+.modal-list li::before{
+  content:'✓';
+  color:var(--accent);
+  font-weight:700;
+  flex-shrink:0;
+}
+.modal-btn{margin-top:1.5rem;width:100%;justify-content:center}
+
+/* ---------- Timeline ---------- */
+.timeline-section{padding:4rem 2rem}
+.timeline-container{max-width:800px;margin:0 auto;position:relative}
+.timeline-container::before{
+  content:'';
+  position:absolute;
+  left:50%;top:0;bottom:0;
+  width:2px;
+  background:linear-gradient(to bottom,var(--accent),var(--gold),var(--accent));
+  transform:translateX(-50%);
+}
+.timeline-item{
+  display:flex;
+  justify-content:flex-end;
+  padding-right:50%;
+  position:relative;
+  margin-bottom:3rem;
+}
+.timeline-item:nth-child(even){
+  justify-content:flex-start;
+  padding-right:0;
+  padding-left:50%;
+}
+.timeline-dot{
+  position:absolute;
+  left:50%;top:0;
+  width:20px;height:20px;
+  border-radius:50%;
+  background:var(--accent);
+  border:4px solid var(--dark);
+  transform:translateX(-50%);
+  z-index:2;
+  box-shadow:0 0 20px rgba(154,103,72,.5);
+}
+.timeline-content{
+  max-width:300px;
+  padding:1.5rem;
+  margin-right:2rem;
+}
+.timeline-item:nth-child(even) .timeline-content{margin-right:0;margin-left:2rem}
+.timeline-year{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.5rem;
+  font-weight:800;
+  color:var(--accent);
+  margin-bottom:.5rem;
+}
+.timeline-title{font-weight:600;color:var(--text-light);margin-bottom:.3rem}
+.timeline-desc{font-size:.9rem;color:var(--text-muted)}
+
+/* ---------- Before/After ---------- */
+.before-after-section{padding:4rem 2rem}
+.before-after-container{
+  max-width:1000px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:2rem;
+}
+.ba-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  height:400px;
+  cursor:col-resize;
+  user-select:none;
+}
+.ba-before,.ba-after{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+}
+.ba-after{width:50%}
+.ba-before .img-ph,
+.ba-after .img-ph{
+  position:absolute;
+  inset:0;
+}
+.ba-after .img-ph{
+  /* garante tamanho correto dentro do slider */
+  width:var(--ba-w, 100vw);
+}
+.ba-label{
+  position:absolute;
+  top:1rem;
+  padding:.4rem 1rem;
+  border-radius:50px;
+  font-size:.8rem;
+  font-weight:600;
+  z-index:3;
+}
+.ba-label-before{left:1rem;background:rgba(0,0,0,.6);color:#fff}
+.ba-label-after{right:1rem;background:var(--accent);color:#fff}
+.ba-slider{
+  position:absolute;
+  top:0;bottom:0;
+  left:50%;
+  width:4px;
+  background:var(--accent);
+  cursor:col-resize;
+  z-index:4;
+  transform:translateX(-50%);
+}
+.ba-slider-handle{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:50px;height:50px;
+  border-radius:50%;
+  background:var(--accent);
+  border:4px solid #fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:1.2rem;
+  box-shadow:0 4px 20px rgba(0,0,0,.3);
+}
+.ba-caption{
+  text-align:center;
+  margin-top:1rem;
+  font-weight:600;
+  color:var(--text-light);
+  font-size:.85rem;
+  opacity:.7;
+}
+
+/* ---------- Treatments ---------- */
+.treatments-grid{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;
+}
+.treatment-card{
+  padding:2rem;
+  text-align:center;
+  transition:all .4s ease;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+}
+.treatment-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,var(--accent) 0%,transparent 60%);
+  opacity:0;
+  transition:opacity .4s;
+}
+.treatment-card:hover::before{opacity:.1}
+.treatment-card:hover{
+  transform:translateY(-10px);
+  border-color:var(--accent);
+  box-shadow:var(--shadow-glow);
+}
+.treatment-icon{
+  width:70px;height:70px;
+  margin:0 auto 1.5rem;
+  background:var(--glass);
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  position:relative;
+  z-index:1;
+}
+.treatment-name{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--text-light);
+  margin-bottom:.5rem;
+  position:relative;
+  z-index:1;
+}
+.treatment-meta{
+  display:flex;
+  flex-direction:column;
+  gap:.3rem;
+  margin-bottom:1.5rem;
+  position:relative;
+  z-index:1;
+}
+.treatment-meta span{font-size:.85rem;color:var(--text-muted)}
+.treatment-link{
+  color:var(--accent);
+  font-weight:600;
+  font-size:.9rem;
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  transition:gap .3s;
+  position:relative;
+  z-index:1;
+}
+.treatment-card:hover .treatment-link{gap:1rem}
+
+/* ---------- Testimonials ---------- */
+.testimonials-section{padding:4rem 2rem;overflow:hidden}
+.testimonials-track{
+  display:flex;
+  gap:2rem;
+  animation:scroll 40s linear infinite;
+  width:max-content;
+}
+.testimonials-track:hover{animation-play-state:paused}
+@keyframes scroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+.testimonial-card{width:400px;padding:2rem;flex-shrink:0}
+.testimonial-stars{color:var(--gold);margin-bottom:1rem;font-size:1.2rem}
+.testimonial-text{
+  font-size:1rem;
+  color:var(--text);
+  line-height:1.7;
+  margin-bottom:1.5rem;
+  font-style:italic;
+}
+.testimonial-author{display:flex;align-items:center;gap:1rem}
+.testimonial-avatar{
+  width:50px;height:50px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--gold));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:700;
+  font-size:1.2rem;
+  flex-shrink:0;
+}
+.testimonial-name{font-weight:600;color:var(--text-light)}
+.testimonial-role{font-size:.85rem;color:var(--text-muted)}
+
+/* ---------- FAQ ---------- */
+.faq-container{max-width:800px;margin:0 auto}
+.faq-item{margin-bottom:1rem;overflow:hidden;transition:all .3s}
+.faq-item:hover{border-color:var(--accent)}
+.faq-question{
+  padding:1.5rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  font-weight:600;
+  color:var(--text-light);
+}
+.faq-icon{
+  width:30px;height:30px;
+  border-radius:50%;
+  background:var(--glass);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all .3s;
+  color:var(--accent);
+  flex-shrink:0;
+}
+.faq-item.active .faq-icon{transform:rotate(45deg);background:var(--accent);color:#fff}
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .4s ease, padding .4s ease;
+  padding:0 1.5rem;
+}
+.faq-item.active .faq-answer{max-height:400px;padding:0 1.5rem 1.5rem}
+.faq-answer p{color:var(--text-muted);font-size:.95rem;line-height:1.7}
+
+/* ---------- Contact ---------- */
+.contact-grid{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:start;
+}
+.contact-info h3{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.8rem;
+  font-weight:700;
+  color:var(--text-light);
+  margin-bottom:1.5rem;
+}
+.contact-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
+.contact-icon{
+  width:50px;height:50px;
+  border-radius:15px;
+  background:var(--glass);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--accent);
+  font-size:1.2rem;
+  flex-shrink:0;
+}
+.contact-text h4{font-weight:600;color:var(--text-light);margin-bottom:.2rem}
+.contact-text p{color:var(--text-muted);font-size:.9rem}
+.contact-map{
+  border-radius:24px;
+  overflow:hidden;
+  min-height:400px;
+  border:1px solid var(--glass-border);
+  background:linear-gradient(160deg,var(--primary) 0%,var(--dark) 100%);
+  display:grid;
+  place-items:center;
+  position:relative;
+}
+.contact-map::before{
+  content:'';
+  position:absolute;
+  inset:24px;
+  border:1px dashed rgba(201,169,110,.3);
+  border-radius:14px;
+}
+.contact-map .img-ph{
+  position:absolute;
+  inset:0;
+  background:transparent;
+}
+
+/* ---------- Floating CTA ---------- */
+.floating-cta{
+  position:fixed;
+  bottom:2rem;right:2rem;
+  z-index:999;
+  display:none;
+  align-items:center;
+  gap:.8rem;
+  padding:1rem 2rem;
+  border-radius:50px;
+  background:linear-gradient(135deg,#25d366,#128c7e);
+  color:#fff;
+  font-weight:600;
+  box-shadow:0 10px 40px rgba(37,211,102,.4);
+  transition:all .3s;
+  animation:floatCTA 3s ease-in-out infinite;
+}
+.floating-cta.visible{display:flex}
+.floating-cta:hover{
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 15px 50px rgba(37,211,102,.6);
+}
+@keyframes floatCTA{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-5px)}
+}
+
+/* ---------- CTA Contratar modelo ---------- */
+.cta-model{padding:4rem 2rem}
+.cta-model-box{
+  max-width:900px;
+  margin:0 auto;
+  padding:4rem 3rem;
+  border-radius:28px;
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(154,103,72,.25),transparent 60%),
+    rgba(13,65,79,.35);
+  border:1px solid rgba(201,169,110,.3);
+  backdrop-filter:blur(20px);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta-model-box::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(201,169,110,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(201,169,110,.06) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(circle at 50% 100%,#000,transparent 70%);
+  -webkit-mask-image:radial-gradient(circle at 50% 100%,#000,transparent 70%);
+  pointer-events:none;
+}
+.cta-model-tag{
+  display:inline-block;
+  padding:.4rem 1rem;
+  background:rgba(201,169,110,.12);
+  border:1px solid rgba(201,169,110,.4);
+  border-radius:50px;
+  font:700 .72rem 'Montserrat',sans-serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1.5rem;
+  position:relative;
+}
+.cta-model-box h2{
+  font-family:'Montserrat',sans-serif;
+  font-size:2.4rem;
+  font-weight:800;
+  color:var(--text-light);
+  margin-bottom:1rem;
+  position:relative;
+}
+.cta-model-box p{
+  color:var(--text-muted);
+  max-width:540px;
+  margin:0 auto 2rem;
+  font-size:1.05rem;
+  position:relative;
+}
+.cta-model-actions{
+  display:flex;
+  gap:1rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  position:relative;
+}
+
+/* ---------- Footer ---------- */
+.footer{padding:4rem 2rem 2rem;border-top:1px solid var(--glass-border)}
+.footer-grid{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:3rem;
+}
+.footer-brand .logo{margin-bottom:1rem;display:block}
+.footer-brand p{color:var(--text-muted);font-size:.9rem;line-height:1.7}
+.footer-title{
+  font-family:'Montserrat',sans-serif;
+  font-weight:600;
+  color:var(--text-light);
+  margin-bottom:1.5rem;
+  font-size:1rem;
+}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:.8rem}
+.footer-links a{
+  color:var(--text-muted);
+  font-size:.9rem;
+  transition:color .3s;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+}
+.footer-links a:hover{color:var(--accent)}
+.footer-links a::before{content:'›';color:var(--accent);font-size:1.2rem}
+.footer-bottom{
+  max-width:1200px;
+  margin:3rem auto 0;
+  padding-top:2rem;
+  border-top:1px solid var(--glass-border);
+  text-align:center;
+  color:var(--text-muted);
+  font-size:.85rem;
+}
+.footer-bottom a{color:var(--gold)}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s ease}
+.reveal.active{opacity:1;transform:translateY(0)}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--dark)}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent-light)}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:1024px){
+  .hero-container{grid-template-columns:1fr;text-align:center}
+  .hero-content h1{font-size:2.5rem}
+  .hero-badges{justify-content:center}
+  .hero-cta-group{justify-content:center}
+  .hero-image-wrapper{order:-1}
+  .hero-image-frame{width:350px;height:450px;margin:0 auto}
+  .treatments-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-container{grid-template-columns:repeat(2,1fr)}
+  .team-grid{grid-template-columns:1fr}
+  .before-after-container{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .modal-body{grid-template-columns:1fr}
+  .modal-img{min-height:300px}
+}
+@media (max-width:768px){
+  .nav-links{display:none}
+  .mobile-toggle{display:block}
+  .hero-content h1{font-size:2rem}
+  .hero-float-card{left:-10px;padding:.8rem 1rem}
+  .hero-float-card-2{right:-10px;padding:.6rem .9rem}
+  .treatments-grid{grid-template-columns:1fr}
+  .stats-container{grid-template-columns:1fr}
+  .timeline-container::before{left:20px}
+  .timeline-item,
+  .timeline-item:nth-child(even){
+    justify-content:flex-start;
+    padding-left:50px;
+    padding-right:0;
+  }
+  .timeline-dot{left:20px;transform:none}
+  .timeline-content{margin-left:0;margin-right:0}
+  .footer-grid{grid-template-columns:1fr}
+  .floating-cta{bottom:1rem;right:1rem;padding:.8rem 1.5rem;font-size:.9rem}
+  .cta-model-box{padding:3rem 1.5rem}
+  .cta-model-box h2{font-size:1.8rem}
+  .section-title{font-size:2rem}
+  .section{padding:4rem 1.25rem}
+  .stats-section,.timeline-section,.before-after-section,
+  .testimonials-section,.cta-model{padding:2.5rem 1.25rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ DEMO BANNER ═══════════ -->
+<div class="demo-banner" id="demoBanner">
+  <strong>Modelo Demo</strong>
+  <span class="hide-mobile">Dados fictícios</span>
+  <a href="../../categorias/saude.html">← Ver outros modelos</a>
+  <button type="button" aria-label="Fechar aviso" onclick="document.getElementById('demoBanner').style.display='none'">✕</button>
+</div>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#hero" class="logo">Clínica Aura<span>.</span></a>
+
+    <ul class="nav-links" id="menu">
+      <li><a href="#hero">Início</a></li>
+      <li><a href="#equipe">Equipe</a></li>
+      <li><a href="#tratamentos">Tratamentos</a></li>
+      <li><a href="#resultados">Resultados</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+
+    <a href="https://wa.me/5575999120261?text=Ol%C3%A1%21%20Vi%20o%20modelo%20Cl%C3%ADnica%20Aura%20%28dermatologia%29%20no%20site%20da%20JOVEMODERNO%20e%20quero%20saber%20mais."
+       class="nav-cta"
+       target="_blank"
+       rel="noopener">
+      Agendar Consulta
+    </a>
+
+    <div class="mobile-toggle" onclick="toggleMobile()">☰</div>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-particles" id="particles"></div>
+
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badges">
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          4.9/5 Avaliação
+        </div>
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          CRM 00.000-DF
+        </div>
+      </div>
+
+      <h1>Dermatologia <br><span class="highlight">& Especialidades</span><br>Médicas</h1>
+
+      <p class="hero-subtitle">
+        Cuidado especializado para sua pele, cabelo e bem-estar.
+        Tecnologia de ponta com atendimento humanizado em Brasília.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="https://wa.me/5575999120261?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20consulta%20%28demo%20do%20modelo%20Cl%C3%ADnica%20Aura%29."
+           class="btn-primary"
+           target="_blank"
+           rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agende sua Consulta
+        </a>
+        <a href="#equipe" class="btn-secondary">Conheça a Equipe →</a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrapper">
+      <div class="hero-image-frame">
+        <div class="img-ph" aria-label="Foto da profissional">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>
+          <span>Foto do profissional</span>
+        </div>
+      </div>
+
+      <div class="glass hero-float-card">
+        <div class="fc-num">15+ Anos</div>
+        <div class="fc-lbl">de Experiência</div>
+      </div>
+
+      <div class="glass hero-float-card-2">
+        <div class="fc-num">3.500+</div>
+        <div class="fc-lbl">Pacientes Atendidos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ STATS ═══════════ -->
+<section class="stats-section" id="stats">
+  <div class="stats-container">
+    <div class="glass stat-card reveal">
+      <div class="stat-icon">👥</div>
+      <div class="stat-number" data-target="3500">0</div>
+      <div class="stat-label">Pacientes Atendidos</div>
+    </div>
+    <div class="glass stat-card reveal">
+      <div class="stat-icon">⭐</div>
+      <div class="stat-number" data-target="49" data-decimal="1">0</div>
+      <div class="stat-label">Avaliação Média</div>
+    </div>
+    <div class="glass stat-card reveal">
+      <div class="stat-icon">🏆</div>
+      <div class="stat-number" data-target="15">0</div>
+      <div class="stat-label">Anos de Experiência</div>
+    </div>
+    <div class="glass stat-card reveal">
+      <div class="stat-icon">🎓</div>
+      <div class="stat-number" data-target="2000">0</div>
+      <div class="stat-label">Ano de Formação</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EQUIPE ═══════════ -->
+<section class="section" id="equipe">
+  <div class="section-header reveal">
+    <div class="section-tag">Nossa Equipe</div>
+    <h2 class="section-title">Médicos Especialistas</h2>
+    <p class="section-subtitle">Conheça os profissionais que cuidam da sua saúde e beleza com excelência e dedicação.</p>
+  </div>
+
+  <div class="team-grid">
+    <div class="glass doctor-card reveal" onclick="openModal('marina')">
+      <div class="doctor-card-inner">
+        <div class="doctor-card-img img-ph" style="height:400px;border-radius:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>
+          <span>Foto</span>
+        </div>
+        <div class="doctor-card-overlay">
+          <div class="doctor-card-name">Dra. Marina Andrade</div>
+          <div class="doctor-card-role">Médica Dermatologista</div>
+          <div class="doctor-card-badges">
+            <span class="doctor-card-badge">CRM 00.000-DF</span>
+            <span class="doctor-card-badge">RQE 0000-DF</span>
+          </div>
+          <div class="doctor-card-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">4.9/5 (287 avaliações)</span>
+          </div>
+          <div class="doctor-card-cta">Ver Perfil Completo →</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass doctor-card reveal" onclick="openModal('rafael')">
+      <div class="doctor-card-inner">
+        <div class="doctor-card-img img-ph" style="height:400px;border-radius:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>
+          <span>Foto</span>
+        </div>
+        <div class="doctor-card-overlay">
+          <div class="doctor-card-name">Dr. Rafael Monteiro</div>
+          <div class="doctor-card-role">Médico Nutrólogo</div>
+          <div class="doctor-card-badges">
+            <span class="doctor-card-badge">CRM 00.001-DF</span>
+            <span class="doctor-card-badge">ABRAN</span>
+          </div>
+          <div class="doctor-card-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">4.8/5 (156 avaliações)</span>
+          </div>
+          <div class="doctor-card-cta">Ver Perfil Completo →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MODAL MARINA ═══════════ -->
+<div class="modal-overlay" id="modal-marina" onclick="closeModal(event, 'marina')">
+  <div class="modal-content glass-strong" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal(null, 'marina')">×</button>
+    <div class="modal-body">
+      <div class="modal-img img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>
+        <span>Foto</span>
+      </div>
+      <div class="modal-info">
+        <div class="modal-name">Dra. Marina Andrade</div>
+        <div class="modal-role">Médica Dermatologista</div>
+        <div class="modal-creds">
+          <span class="modal-cred">CRM 00.000-DF</span>
+          <span class="modal-cred">RQE 0000-DF</span>
+          <span class="modal-cred">SBD Titular</span>
+        </div>
+        <div class="modal-section-title">Formação Acadêmica</div>
+        <ul class="modal-list">
+          <li>Graduação em Medicina pela Faculdade de Medicina da USP — São Paulo (2000)</li>
+          <li>Residência Médica em Dermatologia no Hospital das Clínicas da FMUSP</li>
+          <li>Título de Especialista em Dermatologia pela Sociedade Brasileira de Dermatologia</li>
+        </ul>
+        <div class="modal-section-title">Experiência Profissional</div>
+        <ul class="modal-list">
+          <li>Médica colaboradora do Ambulatório de Tumores da UNB (2005–2011)</li>
+          <li>Médica colaboradora do Ambulatório de Fototerapia da UNB (2009–2011)</li>
+          <li>Docente de Dermatologia da Universidade Católica de Brasília (2008–2009)</li>
+          <li>Membro titular da Sociedade Brasileira de Dermatologia</li>
+        </ul>
+        <a href="https://wa.me/5575999120261?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20consulta%20%28demo%20do%20modelo%20Cl%C3%ADnica%20Aura%29."
+           class="btn-primary modal-btn" target="_blank" rel="noopener">
+          Agendar Consulta
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ MODAL RAFAEL ═══════════ -->
+<div class="modal-overlay" id="modal-rafael" onclick="closeModal(event, 'rafael')">
+  <div class="modal-content glass-strong" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal(null, 'rafael')">×</button>
+    <div class="modal-body">
+      <div class="modal-img img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>
+        <span>Foto</span>
+      </div>
+      <div class="modal-info">
+        <div class="modal-name">Dr. Rafael Monteiro</div>
+        <div class="modal-role">Médico Nutrólogo</div>
+        <div class="modal-creds">
+          <span class="modal-cred">CRM 00.001-DF</span>
+          <span class="modal-cred">ABRAN</span>
+          <span class="modal-cred">FGV MBA</span>
+        </div>
+        <div class="modal-section-title">Formação Acadêmica</div>
+        <ul class="modal-list">
+          <li>Graduação em Medicina pela Universidade do Oeste Paulista (UNOESTE) — 2014</li>
+          <li>Pós-Graduação em Nutrologia pela ABRAN — 2018</li>
+          <li>Graduação em Farmácia e Bioquímica pela UNIP — 2003</li>
+          <li>MBA em Gestão em Saúde na FGV</li>
+        </ul>
+        <div class="modal-section-title">Experiência Profissional</div>
+        <ul class="modal-list">
+          <li>Coordenador Médico do Centro de Ensino e Pesquisa do HBAC (2022–2024)</li>
+          <li>Ciência da Melhoria pelo Institute for Healthcare Improvement (IHI) — 2020</li>
+          <li>Especialista em Emagrecimento e Hipertrofia Muscular</li>
+        </ul>
+        <a href="https://wa.me/5575999120261?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20consulta%20%28demo%20do%20modelo%20Cl%C3%ADnica%20Aura%29."
+           class="btn-primary modal-btn" target="_blank" rel="noopener">
+          Agendar Consulta
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ TIMELINE ═══════════ -->
+<section class="timeline-section" id="timeline">
+  <div class="section-header reveal">
+    <div class="section-tag">Trajetória</div>
+    <h2 class="section-title">Carreira da Dra. Marina</h2>
+    <p class="section-subtitle">Mais de duas décadas dedicadas à dermatologia e ao cuidado com a pele.</p>
+  </div>
+
+  <div class="timeline-container">
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="glass-strong timeline-content">
+        <div class="timeline-year">2000</div>
+        <div class="timeline-title">Graduação USP</div>
+        <div class="timeline-desc">Formada em Medicina pela Faculdade de Medicina da Universidade de São Paulo</div>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="glass-strong timeline-content">
+        <div class="timeline-year">2003</div>
+        <div class="timeline-title">Residência em Dermatologia</div>
+        <div class="timeline-desc">Residência Médica em Dermatologia no Hospital das Clínicas da FMUSP</div>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="glass-strong timeline-content">
+        <div class="timeline-year">2005</div>
+        <div class="timeline-title">Início na UNB</div>
+        <div class="timeline-desc">Médica colaboradora do Ambulatório de Tumores da Universidade de Brasília</div>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="glass-strong timeline-content">
+        <div class="timeline-year">2008</div>
+        <div class="timeline-title">Docência UCB</div>
+        <div class="timeline-desc">Docente de Dermatologia na Universidade Católica de Brasília</div>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="glass-strong timeline-content">
+        <div class="timeline-year">2026</div>
+        <div class="timeline-title">Clínica Aura</div>
+        <div class="timeline-desc">Fundadora da clínica de Dermatologia e Especialidades Médicas em Brasília</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ANTES & DEPOIS ═══════════ -->
+<section class="before-after-section" id="resultados">
+  <div class="section-header reveal">
+    <div class="section-tag">Resultados Reais</div>
+    <h2 class="section-title">Antes & Depois</h2>
+    <p class="section-subtitle">Arraste para ver a transformação. Resultados comprovados dos tratamentos.</p>
+  </div>
+
+  <div class="before-after-container">
+    <div class="ba-card glass reveal" id="ba1">
+      <div class="ba-before">
+        <div class="img-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>
+          <span>Antes</span>
+        </div>
+      </div>
+      <div class="ba-after" id="ba1-after">
+        <div class="img-ph" style="width:calc(100vw);max-width:600px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>
+          <span>Depois</span>
+        </div>
+      </div>
+      <div class="ba-slider" id="ba1-slider">
+        <div class="ba-slider-handle">⇄</div>
+      </div>
+      <div class="ba-label ba-label-before">ANTES</div>
+      <div class="ba-label ba-label-after">DEPOIS</div>
+    </div>
+
+    <div class="ba-card glass reveal" id="ba2">
+      <div class="ba-before">
+        <div class="img-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>
+          <span>Antes</span>
+        </div>
+      </div>
+      <div class="ba-after" id="ba2-after">
+        <div class="img-ph" style="width:calc(100vw);max-width:600px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>
+          <span>Depois</span>
+        </div>
+      </div>
+      <div class="ba-slider" id="ba2-slider">
+        <div class="ba-slider-handle">⇄</div>
+      </div>
+      <div class="ba-label ba-label-before">ANTES</div>
+      <div class="ba-label ba-label-after">DEPOIS</div>
+    </div>
+  </div>
+
+  <p class="ba-caption reveal">*Resultados individuais podem variar. Agende uma consulta para avaliação personalizada.</p>
+</section>
+
+<!-- ═══════════ TRATAMENTOS ═══════════ -->
+<section class="section" id="tratamentos">
+  <div class="section-header reveal">
+    <div class="section-tag">Tratamentos</div>
+    <h2 class="section-title">Áreas de Atuação</h2>
+    <p class="section-subtitle">Tecnologia de ponta e protocolos personalizados para cada necessidade.</p>
+  </div>
+
+  <div class="treatments-grid">
+    <div class="glass treatment-card reveal">
+      <div class="treatment-icon">💉</div>
+      <div class="treatment-name">Toxina Botulínica</div>
+      <div class="treatment-meta">
+        <span>⏱ 15 minutos</span>
+        <span>🏥 Sem internação</span>
+        <span>📅 Resultados em 3–7 dias</span>
+      </div>
+      <span class="treatment-link">Saiba mais →</span>
+    </div>
+
+    <div class="glass treatment-card reveal">
+      <div class="treatment-icon">✨</div>
+      <div class="treatment-name">Preenchimento Facial</div>
+      <div class="treatment-meta">
+        <span>⏱ 30–45 minutos</span>
+        <span>🏥 Sem internação</span>
+        <span>📅 Resultados imediatos</span>
+      </div>
+      <span class="treatment-link">Saiba mais →</span>
+    </div>
+
+    <div class="glass treatment-card reveal">
+      <div class="treatment-icon">💎</div>
+      <div class="treatment-name">Laser & Tecnologia</div>
+      <div class="treatment-meta">
+        <span>⏱ 30–60 minutos</span>
+        <span>🏥 Sem internação</span>
+        <span>📅 Sessões personalizadas</span>
+      </div>
+      <span class="treatment-link">Saiba mais →</span>
+    </div>
+
+    <div class="glass treatment-card reveal">
+      <div class="treatment-icon">🎯</div>
+      <div class="treatment-name">Tratamento Corporal</div>
+      <div class="treatment-meta">
+        <span>⏱ 45–90 minutos</span>
+        <span>🏥 Sem internação</span>
+        <span>📅 Protocolo personalizado</span>
+      </div>
+      <span class="treatment-link">Saiba mais →</span>
+    </div>
+
+    <div class="glass treatment-card reveal">
+      <div class="treatment-icon">🧬</div>
+      <div class="treatment-name">Bioestimuladores</div>
+      <div class="treatment-meta">
+        <span>⏱ 30 minutos</span>
+        <span>🏥 Sem internação</span>
+        <span>📅 Resultados progressivos</span>
+      </div>
+      <span class="treatment-link">Saiba mais →</span>
+    </div>
+
+    <div class="glass treatment-card reveal">
+      <div class="treatment-icon">🍎</div>
+      <div class="treatment-name">Emagrecimento</div>
+      <div class="treatment-meta">
+        <span>⏱ Consulta inicial 60 min</span>
+        <span>🏥 Acompanhamento médico</span>
+        <span>📅 Plano personalizado</span>
+      </div>
+      <span class="treatment-link">Saiba mais →</span>
+    </div>
+
+    <div class="glass treatment-card reveal">
+      <div class="treatment-icon">🔬</div>
+      <div class="treatment-name">Dermatologia Clínica</div>
+      <div class="treatment-meta">
+        <span>⏱ Consulta 30–45 min</span>
+        <span>🏥 Diagnóstico preciso</span>
+        <span>📅 Tratamento contínuo</span>
+      </div>
+      <span class="treatment-link">Saiba mais →</span>
+    </div>
+
+    <div class="glass treatment-card reveal">
+      <div class="treatment-icon">🌿</div>
+      <div class="treatment-name">Rotina de Cuidados</div>
+      <div class="treatment-meta">
+        <span>⏱ Avaliação personalizada</span>
+        <span>🏥 Produtos e suplementos</span>
+        <span>📅 Acompanhamento mensal</span>
+      </div>
+      <span class="treatment-link">Saiba mais →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ DEPOIMENTOS ═══════════ -->
+<section class="testimonials-section" id="depoimentos">
+  <div class="section-header reveal">
+    <div class="section-tag">Depoimentos</div>
+    <h2 class="section-title">O que dizem os pacientes</h2>
+    <p class="section-subtitle">Experiências de quem confiou na Clínica Aura.</p>
+  </div>
+
+  <div class="testimonials-track">
+    <!-- 4 depoimentos originais + 4 duplicados para loop -->
+    <div class="glass testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">"A Dra. Marina é simplesmente incrível. Meu tratamento de rejuvenescimento facial superou todas as expectativas. Resultados naturais e muito elegantes."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">M</div>
+        <div>
+          <div class="testimonial-name">Maria Fernanda</div>
+          <div class="testimonial-role">Paciente desde 2023</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">"Profissionalismo exemplar. O tratamento com laser para manchas melhorou 90% da minha pele em apenas 3 sessões. Recomendo de olhos fechados!"</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">J</div>
+        <div>
+          <div class="testimonial-name">João Carlos</div>
+          <div class="testimonial-role">Paciente desde 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">"Ambiente acolhedor, equipe atenciosa e resultados que realmente fazem diferença. A Dra. Marina tem um olhar artístico para cada rosto."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">A</div>
+        <div>
+          <div class="testimonial-name">Ana Paula</div>
+          <div class="testimonial-role">Paciente desde 2022</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">"O Dr. Rafael transformou minha relação com a alimentação. Em 6 meses perdi 12 kg de forma saudável e sustentável. Acompanhamento médico de verdade."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">R</div>
+        <div>
+          <div class="testimonial-name">Ricardo Mendes</div>
+          <div class="testimonial-role">Paciente desde 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Duplicatas para loop contínuo -->
+    <div class="glass testimonial-card" aria-hidden="true">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">"A Dra. Marina é simplesmente incrível. Meu tratamento de rejuvenescimento facial superou todas as expectativas. Resultados naturais e muito elegantes."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">M</div>
+        <div>
+          <div class="testimonial-name">Maria Fernanda</div>
+          <div class="testimonial-role">Paciente desde 2023</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass testimonial-card" aria-hidden="true">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">"Profissionalismo exemplar. O tratamento com laser para manchas melhorou 90% da minha pele em apenas 3 sessões. Recomendo de olhos fechados!"</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">J</div>
+        <div>
+          <div class="testimonial-name">João Carlos</div>
+          <div class="testimonial-role">Paciente desde 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass testimonial-card" aria-hidden="true">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">"Ambiente acolhedor, equipe atenciosa e resultados que realmente fazem diferença. A Dra. Marina tem um olhar artístico para cada rosto."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">A</div>
+        <div>
+          <div class="testimonial-name">Ana Paula</div>
+          <div class="testimonial-role">Paciente desde 2022</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass testimonial-card" aria-hidden="true">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">"O Dr. Rafael transformou minha relação com a alimentação. Em 6 meses perdi 12 kg de forma saudável e sustentável. Acompanhamento médico de verdade."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">R</div>
+        <div>
+          <div class="testimonial-name">Ricardo Mendes</div>
+          <div class="testimonial-role">Paciente desde 2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="section" id="faq">
+  <div class="section-header reveal">
+    <div class="section-tag">Dúvidas</div>
+    <h2 class="section-title">Perguntas Frequentes</h2>
+    <p class="section-subtitle">Tire suas dúvidas sobre os tratamentos e procedimentos.</p>
+  </div>
+
+  <div class="faq-container">
+    <div class="glass faq-item reveal">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Quanto tempo dura o efeito da toxina botulínica?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>O efeito da toxina botulínica dura em média 4 a 6 meses, podendo variar de acordo com o metabolismo de cada paciente, a área tratada e a dosagem aplicada. Recomendamos a manutenção a cada 4 meses para resultados consistentes.</p>
+      </div>
+    </div>
+
+    <div class="glass faq-item reveal">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Os preenchedores faciais são seguros?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>Sim, quando aplicados por um médico dermatologista especializado. Utilizamos apenas produtos aprovados pela ANVISA e realizamos uma avaliação completa antes de qualquer procedimento. Os efeitos colaterais são raros e geralmente leves.</p>
+      </div>
+    </div>
+
+    <div class="glass faq-item reveal">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Qual o tempo de recuperação após o laser?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>Depende do tipo de laser. Os lasers não ablativos permitem retorno imediato às atividades. Os ablativos podem exigir 3–7 dias de recuperação. Fornecemos orientações específicas para cada caso durante a consulta.</p>
+      </div>
+    </div>
+
+    <div class="glass faq-item reveal">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Preciso de encaminhamento para agendar uma consulta?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>Não. Você pode agendar sua consulta diretamente pelo WhatsApp ou telefone. Atendemos tanto particular quanto convênios selecionados. Entre em contato para verificar sua cobertura.</p>
+      </div>
+    </div>
+
+    <div class="glass faq-item reveal">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Como funciona o acompanhamento de emagrecimento?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        <p>O programa de emagrecimento é personalizado e inclui consulta nutrológica completa, plano alimentar individualizado, prescrição de suplementação quando necessária e acompanhamento mensal com ajustes conforme evolução.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTATO ═══════════ -->
+<section class="section" id="contato">
+  <div class="section-header reveal">
+    <div class="section-tag">Contato</div>
+    <h2 class="section-title">Marque sua Consulta</h2>
+    <p class="section-subtitle">Estamos prontos para cuidar de você. Entre em contato pelos canais abaixo.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <h3>Informações de Contato</h3>
+
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-text">
+          <h4>Telefone</h4>
+          <p>(61) 3000-0000</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">💬</div>
+        <div class="contact-text">
+          <h4>WhatsApp</h4>
+          <p>(61) 90000-0000</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-text">
+          <h4>Endereço</h4>
+          <p>Setor Comercial Sul · Centro Médico · Bloco A · Salas 000–000 (Brasília-DF)</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-text">
+          <h4>Horário de Funcionamento</h4>
+          <p>Segunda a Sexta: 8h às 18h</p>
+        </div>
+      </div>
+
+      <a href="https://wa.me/5575999120261?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20consulta%20%28demo%20do%20modelo%20Cl%C3%ADnica%20Aura%29."
+         class="btn-primary" target="_blank" rel="noopener" style="margin-top:1rem">
+        Agendar pelo WhatsApp
+      </a>
+    </div>
+
+    <div class="contact-map reveal" aria-label="Mapa (placeholder)">
+      <div class="img-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Mapa da clínica</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA CONTRATAR MODELO ═══════════ -->
+<section class="cta-model">
+  <div class="cta-model-box reveal">
+    <span class="cta-model-tag">Modelo exclusivo JOVEMODERNO</span>
+    <h2>Gostou desse modelo?</h2>
+    <p>Personalizamos com a sua marca, seu conteúdo e suas fotos. Entrega em até 5 dias úteis.</p>
+    <div class="cta-model-actions">
+      <a href="https://wa.me/5575999120261?text=Ol%C3%A1%21%20Quero%20contratar%20o%20modelo%20Cl%C3%ADnica%20Aura%20%28dermatologia%29."
+         class="btn-primary" target="_blank" rel="noopener">
+        Quero contratar esse modelo
+      </a>
+      <a href="../../categorias/saude.html" class="btn-secondary">Ver outros modelos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Clínica Aura<span>.</span></div>
+      <p>Dermatologia e Especialidades Médicas em Brasília. Cuidado especializado com tecnologia de ponta e atendimento humanizado. Site modelo desenvolvido por <a href="../../../index.html" style="color:var(--gold)">JOVEMODERNO</a>.</p>
+    </div>
+
+    <div>
+      <div class="footer-title">Áreas de Atuação</div>
+      <ul class="footer-links">
+        <li><a href="#tratamentos">Dermatologia Estética</a></li>
+        <li><a href="#tratamentos">Emagrecimento</a></li>
+        <li><a href="#tratamentos">Laser e Tecnologia</a></li>
+        <li><a href="#tratamentos">Tratamento Corporal</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-title">Páginas</div>
+      <ul class="footer-links">
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#tratamentos">Tratamentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-title">Redes Sociais</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="event.preventDefault()">Instagram</a></li>
+        <li><a href="https://wa.me/5575999120261?text=Ol%C3%A1%21%20Vi%20o%20modelo%20Cl%C3%ADnica%20Aura." target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © 2026 Clínica Aura (personagem fictícia do modelo).
+      Todos os direitos reservados. | CRM 00.000-DF | Brasília-DF
+    </p>
+    <p style="margin-top:.6rem;font-size:.8rem">
+      Modelo desenvolvido por <a href="../../../index.html">JOVEMODERNO</a>
+    </p>
+  </div>
+</footer>
+
+<!-- ═══════════ FLOATING CTA ═══════════ -->
+<a href="https://wa.me/5575999120261?text=Ol%C3%A1%21%20Vi%20o%20modelo%20Cl%C3%ADnica%20Aura%20%28dermatologia%29%20e%20quero%20saber%20mais."
+   class="floating-cta" id="floatingCta" target="_blank" rel="noopener">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Falar com JOVEMODERNO
+</a>
+
+<script>
+/* ===== Particles ===== */
+(function(){
+  const c = document.getElementById('particles');
+  if(!c) return;
+  for(let i=0;i<15;i++){
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random()*100 + 50;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.left = Math.random()*100 + '%';
+    p.style.top = Math.random()*100 + '%';
+    p.style.animationDelay = Math.random()*20 + 's';
+    p.style.animationDuration = (Math.random()*10 + 15) + 's';
+    c.appendChild(p);
+  }
+})();
+
+/* ===== Navbar scroll ===== */
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  if(!navbar) return;
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+/* ===== Reveal on scroll ===== */
+const observerOptions = {threshold:.1, rootMargin:'0px 0px -50px 0px'};
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+      const statNumber = entry.target.querySelector('.stat-number');
+      if(statNumber && !statNumber.classList.contains('counted')){
+        animateCounter(statNumber);
+        statNumber.classList.add('counted');
+      }
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ===== Counter animation ===== */
+function animateCounter(el){
+  const target = parseInt(el.dataset.target, 10);
+  const decimal = parseInt(el.dataset.decimal, 10) || 0;
+  const duration = 2000;
+  const start = performance.now();
+
+  function update(t){
+    const elapsed = t - start;
+    const progress = Math.min(elapsed/duration, 1);
+    const easeOut = 1 - Math.pow(1 - progress, 3);
+    const current = Math.floor(easeOut * target);
+
+    if(decimal > 0){
+      el.textContent = (current/10).toFixed(decimal);
+    } else {
+      el.textContent = current.toLocaleString('pt-BR');
+    }
+
+    if(progress < 1) requestAnimationFrame(update);
+    else {
+      if(decimal > 0) el.textContent = (target/10).toFixed(decimal);
+      else el.textContent = target.toLocaleString('pt-BR');
+    }
+  }
+  requestAnimationFrame(update);
+}
+
+/* ===== Modal ===== */
+function openModal(id){
+  const el = document.getElementById('modal-' + id);
+  if(!el) return;
+  el.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(event, id){
+  if(event && event.target !== event.currentTarget) return;
+  const el = document.getElementById('modal-' + id);
+  if(!el) return;
+  el.classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){
+    document.querySelectorAll('.modal-overlay.active').forEach(m => {
+      m.classList.remove('active');
+    });
+    document.body.style.overflow = '';
+  }
+});
+
+/* ===== FAQ ===== */
+function toggleFaq(el){
+  const item = el.parentElement;
+  const wasActive = item.classList.contains('active');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+  if(!wasActive) item.classList.add('active');
+}
+
+/* ===== Before / After slider ===== */
+function initSlider(cardId, afterId, sliderId){
+  const card = document.getElementById(cardId);
+  const after = document.getElementById(afterId);
+  const slider = document.getElementById(sliderId);
+  if(!card || !after || !slider) return;
+
+  let isDragging = false;
+
+  function updateSlider(x){
+    const rect = card.getBoundingClientRect();
+    let pos = (x - rect.left) / rect.width;
+    pos = Math.max(0, Math.min(1, pos));
+    after.style.width = (pos * 100) + '%';
+    slider.style.left = (pos * 100) + '%';
+    // Ajusta a largura interna do placeholder para ficar estável
+    const inner = after.querySelector('.img-ph');
+    if(inner) inner.style.width = rect.width + 'px';
+  }
+
+  slider.addEventListener('mousedown', e => {
+    isDragging = true;
+    e.preventDefault();
+  });
+  document.addEventListener('mouseup', () => isDragging = false);
+  document.addEventListener('mousemove', e => {
+    if(isDragging) updateSlider(e.clientX);
+  });
+
+  slider.addEventListener('touchstart', () => isDragging = true, {passive:true});
+  document.addEventListener('touchend', () => isDragging = false);
+  document.addEventListener('touchmove', e => {
+    if(isDragging) updateSlider(e.touches[0].clientX);
+  }, {passive:true});
+
+  card.addEventListener('click', e => updateSlider(e.clientX));
+
+  // Ajuste inicial após o layout
+  requestAnimationFrame(() => {
+    const rect = card.getBoundingClientRect();
+    const inner = after.querySelector('.img-ph');
+    if(inner) inner.style.width = rect.width + 'px';
+  });
+}
+
+initSlider('ba1', 'ba1-after', 'ba1-slider');
+initSlider('ba2', 'ba2-after', 'ba2-slider');
+
+/* ===== Floating CTA ===== */
+const floatingCta = document.getElementById('floatingCta');
+window.addEventListener('scroll', () => {
+  if(!floatingCta) return;
+  const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  floatingCta.classList.toggle('visible', scrollPercent > 25);
+});
+
+/* ===== Mobile menu ===== */
+function toggleMobile(){
+  const nav = document.querySelector('.nav-links');
+  if(!nav) return;
+  const isOpen = nav.style.display === 'flex';
+  if(isOpen){
+    nav.style.display = '';
+    return;
+  }
+  nav.style.display = 'flex';
+  nav.style.position = 'absolute';
+  nav.style.top = '100%';
+  nav.style.left = '0';
+  nav.style.right = '0';
+  nav.style.flexDirection = 'column';
+  nav.style.background = 'rgba(10,10,15,0.98)';
+  nav.style.padding = '2rem';
+  nav.style.backdropFilter = 'blur(20px)';
+  nav.style.borderBottom = '1px solid var(--glass-border)';
+  nav.style.gap = '1.5rem';
+}
+
+/* ===== Smooth scroll ===== */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e){
+    const id = this.getAttribute('href');
+    if(id === '#' || id.length < 2) return;
+    const target = document.querySelector(id);
+    if(!target) return;
+    e.preventDefault();
+    target.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+</script>
+</body>
+</html>

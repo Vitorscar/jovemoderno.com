@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Médica Premium | Atendimento Humanizado</title>
+    <meta name="description" content="Clínica médica premium com atendimento humanizado, equipe especializada e agendamento online. Consultas, exames e acompanhamento em ambiente moderno.">
+    <meta name="theme-color" content="#2563EB">
+    <link rel="canonical" href="https://clinicamedica.com.br">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='10' fill='%232563EB'/><path d='M18 8L10 14v4c0 8 3.5 13.5 8 16 4.5-2.5 8-8 8-16v-4l-8-6z' fill='white'/></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========== BOTÃO VOLTAR (fixo) ========== -->
+    <a href="../../../index.html" class="voltar-portfolio">← Portfólio</a>
+
+    <!-- ========== HEADER / NAVEGAÇÃO ========== -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="#inicio" class="logo" aria-label="Clínica Médica Premium - Página inicial">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                    <rect width="36" height="36" rx="10" fill="#2563EB"/>
+                    <path d="M18 8L10 14v4c0 8 3.5 13.5 8 16 4.5-2.5 8-8 8-16v-4l-8-6z" fill="white" opacity="0.9"/>
+                    <path d="M18 12v4m0 0v4m0-4h4m-4 0h-4" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Clínica<span class="logo-highlight">Premium</span></span>
+            </a>
+
+            <nav class="nav" id="nav" aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link active">Início</a></li>
+                    <li><a href="#especialidades" class="nav-link">Especialidades</a></li>
+                    <li><a href="#equipe" class="nav-link">Equipe</a></li>
+                    <li><a href="#agendamento" class="nav-link">Agendamento</a></li>
+                    <li><a href="#convenios" class="nav-link">Convênios</a></li>
+                    <li><a href="#exames" class="nav-link">Exames</a></li>
+                    <li><a href="#estrutura" class="nav-link">Estrutura</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-dark-mode" id="darkModeToggle" aria-label="Alternar modo escuro" title="Alternar modo claro/escuro">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+                <a href="#agendamento" class="btn btn-primary btn-sm">Agendar</a>
+                <button class="btn-menu" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ========== SEÇÃO HERO ========== -->
+        <section class="hero" id="inicio">
+            <div class="hero-bg" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80" alt="" loading="eager" fetchpriority="high">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-badge reveal">👋 Bem-vindo à Clínica Premium</span>
+                    <h1 class="hero-title reveal">Atendimento médico humanizado com <span>tecnologia e excelência</span></h1>
+                    <p class="hero-subtitle reveal">Consultas, exames e acompanhamento especializado em um ambiente moderno e acolhedor.</p>
+                    <div class="hero-buttons reveal">
+                        <a href="#agendamento" class="btn btn-primary btn-lg">Agendar Consulta</a>
+                        <a href="https://wa.me/5511999999999" class="btn btn-outline btn-lg" target="_blank" rel="noopener">Falar no WhatsApp</a>
+                    </div>
+                    <div class="hero-trust reveal">
+                        <div class="trust-item"><span class="trust-icon" aria-hidden="true">👨‍⚕️</span> Equipe especializada</div>
+                        <div class="trust-item"><span class="trust-icon" aria-hidden="true">🤝</span> Atendimento humanizado</div>
+                        <div class="trust-item"><span class="trust-icon" aria-hidden="true">🏥</span> Estrutura moderna</div>
+                        <div class="trust-item"><span class="trust-icon" aria-hidden="true">📱</span> Agendamento online</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-wave" aria-hidden="true">
+                <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z" fill="var(--bg)"/></svg>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO ESPECIALIDADES ========== -->
+        <section class="section especialidades" id="especialidades">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Nossas Especialidades</span>
+                    <h2 class="section-title">Cuidado completo para <span>toda a família</span></h2>
+                    <p class="section-desc">Oferecemos atendimento em diversas especialidades com profissionais altamente qualificados.</p>
+                </div>
+                <div class="especialidades-grid">
+                    <div class="especialidade-card reveal" data-delay="0">
+                        <div class="especialidade-icon" aria-hidden="true">❤️</div>
+                        <h3>Cardiologia</h3>
+                        <p>Cuidados com o coração e sistema cardiovascular com exames de última geração.</p>
+                        <a href="#agendamento" class="card-link">Agendar consulta →</a>
+                    </div>
+                    <div class="especialidade-card reveal" data-delay="100">
+                        <div class="especialidade-icon" aria-hidden="true">👶</div>
+                        <h3>Pediatria</h3>
+                        <p>Acompanhamento completo do desenvolvimento infantil em ambiente acolhedor.</p>
+                        <a href="#agendamento" class="card-link">Agendar consulta →</a>
+                    </div>
+                    <div class="especialidade-card reveal" data-delay="200">
+                        <div class="especialidade-icon" aria-hidden="true">🦴</div>
+                        <h3>Ortopedia</h3>
+                        <p>Diagnóstico e tratamento de problemas ósseos, articulares e musculares.</p>
+                        <a href="#agendamento" class="card-link">Agendar consulta →</a>
+                    </div>
+                    <div class="especialidade-card reveal" data-delay="300">
+                        <div class="especialidade-icon" aria-hidden="true">🧠</div>
+                        <h3>Neurologia</h3>
+                        <p>Atendimento especializado para doenças do sistema nervoso central e periférico.</p>
+                        <a href="#agendamento" class="card-link">Agendar consulta →</a>
+                    </div>
+                    <div class="especialidade-card reveal" data-delay="400">
+                        <div class="especialidade-icon" aria-hidden="true">👩‍⚕️</div>
+                        <h3>Ginecologia</h3>
+                        <p>Saúde da mulher em todas as fases da vida, com prevenção e acolhimento.</p>
+                        <a href="#agendamento" class="card-link">Agendar consulta →</a>
+                    </div>
+                    <div class="especialidade-card reveal" data-delay="500">
+                        <div class="especialidade-icon" aria-hidden="true">👁️</div>
+                        <h3>Oftalmologia</h3>
+                        <p>Exames de rotina e tratamentos para a saúde ocular com equipamentos modernos.</p>
+                        <a href="#agendamento" class="card-link">Agendar consulta →</a>
+                    </div>
+                </div>
+                <div class="especialidades-footer reveal">
+                    <button class="btn btn-outline" id="btnVerTodas" aria-expanded="false" aria-controls="especialidadesExtras">Ver todas as especialidades</button>
+                </div>
+                <div class="especialidades-extras" id="especialidadesExtras" hidden>
+                    <div class="especialidades-grid">
+                        <div class="especialidade-card reveal">
+                            <div class="especialidade-icon" aria-hidden="true">🩺</div>
+                            <h3>Clínica Geral</h3>
+                            <p>Atendimento primário para diagnóstico e acompanhamento da saúde geral.</p>
+                            <a href="#agendamento" class="card-link">Agendar consulta →</a>
+                        </div>
+                        <div class="especialidade-card reveal">
+                            <div class="especialidade-icon" aria-hidden="true">🦷</div>
+                            <h3>Odontologia</h3>
+                            <p>Saúde bucal completa com tratamentos estéticos e preventivos.</p>
+                            <a href="#agendamento" class="card-link">Agendar consulta →</a>
+                        </div>
+                        <div class="especialidade-card reveal">
+                            <div class="especialidade-icon" aria-hidden="true">🧬</div>
+                            <h3>Dermatologia</h3>
+                            <p>Cuidados com a pele, cabelos e unhas com avaliação clínica especializada.</p>
+                            <a href="#agendamento" class="card-link">Agendar consulta →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO EQUIPE MÉDICA ========== -->
+        <section class="section equipe" id="equipe">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Nossa Equipe</span>
+                    <h2 class="section-title">Profissionais dedicados ao <span>seu bem-estar</span></h2>
+                    <p class="section-desc">Médicos experientes e comprometidos com a excelência no atendimento.</p>
+                </div>
+                <div class="equipe-grid" id="equipeGrid">
+                    <!-- Preenchido via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO AGENDAMENTO ONLINE ========== -->
+        <section class="section agendamento" id="agendamento">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Agendamento Online</span>
+                    <h2 class="section-title">Marque sua consulta com <span>facilidade</span></h2>
+                    <p class="section-desc">Escolha a especialidade, o médico, a data e o horário em poucos cliques.</p>
+                </div>
+                <div class="agendamento-card reveal" id="agendamentoCard">
+                    <div class="agendamento-steps" id="agendamentoSteps">
+                        <div class="step active" data-step="1"><span>1</span> Especialidade</div>
+                        <div class="step" data-step="2"><span>2</span> Médico</div>
+                        <div class="step" data-step="3"><span>3</span> Data</div>
+                        <div class="step" data-step="4"><span>4</span> Horário</div>
+                    </div>
+                    <div class="agendamento-content" id="agendamentoContent">
+                        <!-- Preenchido via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO CONVÊNIOS ========== -->
+        <section class="section convenios" id="convenios">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Convênios</span>
+                    <h2 class="section-title">Convênios <span>Atendidos</span></h2>
+                    <p class="section-desc">Trabalhamos com os principais convênios para oferecer mais comodidade aos nossos pacientes.</p>
+                </div>
+                <div class="carrossel-wrapper reveal">
+                    <div class="carrossel-gradiente left" aria-hidden="true"></div>
+                    <div class="carrossel-track" id="carrosselTrack">
+                        <!-- Preenchido via JavaScript (duplicado para loop infinito) -->
+                    </div>
+                    <div class="carrossel-gradiente right" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO EXAMES ========== -->
+        <section class="section exames" id="exames">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Exames</span>
+                    <h2 class="section-title">Infraestrutura completa para <span>diagnósticos</span></h2>
+                    <p class="section-desc">Realizamos exames com equipamentos modernos e equipe técnica qualificada.</p>
+                </div>
+                <div class="exames-grid">
+                    <div class="exame-card reveal" data-delay="0">
+                        <div class="exame-icon" aria-hidden="true">🔬</div>
+                        <h3>Exames Laboratoriais</h3>
+                        <p>Análises clínicas com resultados rápidos e precisos para o diagnóstico eficaz.</p>
+                    </div>
+                    <div class="exame-card reveal" data-delay="100">
+                        <div class="exame-icon" aria-hidden="true">📡</div>
+                        <h3>Ultrassonografia</h3>
+                        <p>Exames de imagem não invasivos com equipamentos de última geração.</p>
+                    </div>
+                    <div class="exame-card reveal" data-delay="200">
+                        <div class="exame-icon" aria-hidden="true">💓</div>
+                        <h3>Eletrocardiograma</h3>
+                        <p>Avaliação completa da atividade elétrica do coração em poucos minutos.</p>
+                    </div>
+                    <div class="exame-card reveal" data-delay="300">
+                        <div class="exame-icon" aria-hidden="true">🩻</div>
+                        <h3>Raio-X</h3>
+                        <p>Radiografias com alta definição para visualização precisa de estruturas internas.</p>
+                    </div>
+                    <div class="exame-card reveal" data-delay="400">
+                        <div class="exame-icon" aria-hidden="true">📋</div>
+                        <h3>Check-up Completo</h3>
+                        <p>Avaliação geral da saúde com exames laboratoriais e consultas integradas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO ESTRUTURA ========== -->
+        <section class="section estrutura" id="estrutura">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Nossa Estrutura</span>
+                    <h2 class="section-title">Ambiente pensado para o <span>seu conforto</span></h2>
+                    <p class="section-desc">Conheça os espaços da nossa clínica preparados para oferecer a melhor experiência.</p>
+                </div>
+                <div class="galeria-grid reveal" id="galeriaGrid">
+                    <!-- Preenchido via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO DIFERENCIAIS ========== -->
+        <section class="section diferenciais" id="diferenciais">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Por que nos escolher</span>
+                    <h2 class="section-title">Diferenciais da <span>nossa clínica</span></h2>
+                </div>
+                <div class="diferenciais-grid">
+                    <div class="diferencial-card reveal" data-delay="0">
+                        <span class="diferencial-icon" aria-hidden="true">🕐</span>
+                        <h3>Atendimento rápido</h3>
+                        <p>Consultas com horário marcado e pontualidade para respeitar o seu tempo.</p>
+                    </div>
+                    <div class="diferencial-card reveal" data-delay="100">
+                        <span class="diferencial-icon" aria-hidden="true">👩‍⚕️</span>
+                        <h3>Equipe especializada</h3>
+                        <p>Profissionais com formação sólida e constante atualização em suas áreas.</p>
+                    </div>
+                    <div class="diferencial-card reveal" data-delay="200">
+                        <span class="diferencial-icon" aria-hidden="true">🏥</span>
+                        <h3>Estrutura moderna</h3>
+                        <p>Instalações projetadas para oferecer conforto e segurança aos pacientes.</p>
+                    </div>
+                    <div class="diferencial-card reveal" data-delay="300">
+                        <span class="diferencial-icon" aria-hidden="true">📱</span>
+                        <h3>Agendamento online</h3>
+                        <p>Marque consultas pelo site a qualquer hora, com praticidade e agilidade.</p>
+                    </div>
+                    <div class="diferencial-card reveal" data-delay="400">
+                        <span class="diferencial-icon" aria-hidden="true">📍</span>
+                        <h3>Fácil localização</h3>
+                        <p>Localização central com fácil acesso por transporte público e particular.</p>
+                    </div>
+                    <div class="diferencial-card reveal" data-delay="500">
+                        <span class="diferencial-icon" aria-hidden="true">🚗</span>
+                        <h3>Estacionamento próprio</h3>
+                        <p>Estacionamento gratuito para pacientes, com vagas cobertas e segurança.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO AVALIAÇÕES ========== -->
+        <section class="section avaliacoes" id="avaliacoes">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Avaliações</span>
+                    <h2 class="section-title">O que dizem nossos <span>pacientes</span></h2>
+                </div>
+                <div class="avaliacoes-grid">
+                    <div class="avaliacao-card reveal" data-delay="0">
+                        <div class="avaliacao-estrelas" aria-label="5 de 5 estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">"Atendimento excelente e muito organizado. Fui recebida com muita atenção e o médico foi extremamente cuidadoso na consulta."</p>
+                        <div class="avaliacao-autor">
+                            <div class="avaliacao-avatar" aria-hidden="true">MS</div>
+                            <div>
+                                <strong>Maria Silva</strong>
+                                <span>Paciente</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="avaliacao-card reveal" data-delay="200">
+                        <div class="avaliacao-estrelas" aria-label="5 de 5 estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">"Consegui marcar consulta rapidamente pelo site. Processo simples e intuitivo. A clínica é linda e muito bem equipada."</p>
+                        <div class="avaliacao-autor">
+                            <div class="avaliacao-avatar" aria-hidden="true">RP</div>
+                            <div>
+                                <strong>Rafael Pereira</strong>
+                                <span>Paciente</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="avaliacao-card reveal" data-delay="400">
+                        <div class="avaliacao-estrelas" aria-label="5 de 5 estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">"Médicos atenciosos e clínica impecável. Recomendo para toda a família. O estacionamento facilitou muito."</p>
+                        <div class="avaliacao-autor">
+                            <div class="avaliacao-avatar" aria-hidden="true">AC</div>
+                            <div>
+                                <strong>Ana Costa</strong>
+                                <span>Paciente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO LOCALIZAÇÃO ========== -->
+        <section class="section localizacao" id="contato">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Localização</span>
+                    <h2 class="section-title">Estamos <span>próximos a você</span></h2>
+                </div>
+                <div class="localizacao-grid reveal">
+                    <div class="localizacao-info">
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">📍</span>
+                            <div>
+                                <strong>Endereço</strong>
+                                <p>Av. Paulista, 1000 - Sala 501<br>Bela Vista, São Paulo - SP</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">🕐</span>
+                            <div>
+                                <strong>Horários de Funcionamento</strong>
+                                <p>Segunda a Sexta: 7h às 20h<br>Sábado: 8h às 14h</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">📞</span>
+                            <div>
+                                <strong>Telefone</strong>
+                                <p>(11) 99999-9999</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">💬</span>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <p>(11) 99999-9999</p>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/5511999999999" class="btn btn-primary" target="_blank" rel="noopener">Enviar mensagem</a>
+                    </div>
+                    <div class="localizacao-mapa">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975841057!2d-46.6545!3d-23.561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+                            width="100%" height="400"
+                            style="border:0; border-radius:16px;"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localização da clínica no Google Maps"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CTA FINAL ========== -->
+        <section class="section cta-final">
+            <div class="container">
+                <div class="cta-card reveal">
+                    <h2>Sua saúde merece <span>atenção especializada</span></h2>
+                    <p>Agende sua consulta agora e comece a cuidar da sua saúde com quem entende do assunto.</p>
+                    <div class="cta-buttons">
+                        <a href="#agendamento" class="btn btn-primary btn-lg">Agendar Consulta</a>
+                        <a href="https://wa.me/5511999999999" class="btn btn-outline-light btn-lg" target="_blank" rel="noopener">Falar no WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#inicio" class="logo">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                            <rect width="36" height="36" rx="10" fill="#2563EB"/>
+                            <path d="M18 8L10 14v4c0 8 3.5 13.5 8 16 4.5-2.5 8-8 8-16v-4l-8-6z" fill="white" opacity="0.9"/>
+                        </svg>
+                        <span>Clínica<span class="logo-highlight">Premium</span></span>
+                    </a>
+                    <p>Atendimento médico humanizado com tecnologia e excelência.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#equipe">Equipe</a></li>
+                        <li><a href="#agendamento">Agendamento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Mais</h4>
+                    <ul>
+                        <li><a href="#convenios">Convênios</a></li>
+                        <li><a href="#exames">Exames</a></li>
+                        <li><a href="#estrutura">Estrutura</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-news">
+                    <h4>Contato</h4>
+                    <p>📞 (11) 99999-9999</p>
+                    <p>📧 contato@clinicapremium.com.br</p>
+                    <p>📍 Av. Paulista, 1000 - Sala 501</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Clínica Premium. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== WHATSAPP FLUTUANTE ========== -->
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" title="Falar no WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- ========== LIGHTBOX ========== -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">&times;</button>
+        <img src="" alt="" id="lightboxImg">
+    </div>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="js/main.js" defer></script>
+</body>
+</html>

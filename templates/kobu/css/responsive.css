@@ -1,0 +1,93 @@
+/* ============================================
+   RESPONSIVE — Media Queries
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 240px;
+  }
+
+  .pets-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .dashboard-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  .btn-icon {
+    display: block;
+  }
+
+  .topbar {
+    padding: 0 16px;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+
+  .content-area {
+    padding: 16px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .pets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .perfil-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .search-filter-bar {
+    flex-direction: column;
+  }
+
+  .modal {
+    padding: 24px 16px;
+    width: 95%;
+    border-radius: var(--radius-sm);
+  }
+
+  .landing-card {
+    padding: 32px 20px;
+  }
+
+  .landing-logo h1 {
+    font-size: 32px;
+  }
+}
+
+/* Desktop: garantir sidebar visível */
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0) !important;
+  }
+
+  .main-content {
+    margin-left: var(--sidebar-width) !important;
+  }
+}

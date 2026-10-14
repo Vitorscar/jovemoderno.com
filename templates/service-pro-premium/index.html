@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service Pro Premium — Demo | JOVEMODERNO</title>
+<meta name="description" content="Demonstração de template inteligente multi-nicho: escolha a área do seu negócio e veja o site montado em tempo real. Dados fictícios.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A0A0F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%233B82F6'/><text x='16' y='23' text-anchor='middle' font-size='20' fill='white'>⚡</text></svg>">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Service Pro Premium — Demo JOVEMODERNO">
+<meta property="og:description" content="Template inteligente multi-nicho para serviços.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Banner demo -->
+<div class="demo-banner">
+  <b>Demo</b>
+  <span>Dados e imagens fictícios</span>
+  <span class="keep">·</span>
+  <a href="../../../projetos/service-pro-premium.html">Ver case completo</a>
+</div>
+
+<!-- Onboarding -->
+<section id="onboarding" class="onboarding">
+  <div class="onboarding-inner">
+    <span class="onboarding-tag">⚡ Service Pro Premium</span>
+    <h1>Qual é a área do seu negócio?</h1>
+    <p class="onboarding-sub">
+      Escolha um segmento e veja o site montado na hora. Você pode trocar
+      depois — o template adapta cores, textos e seções automaticamente.
+    </p>
+
+    <div class="grid-nichos" role="list">
+      <button type="button" role="listitem" onclick="selecionarNicho('academia')">
+        <span class="nicho-icon">🏋️</span>
+        <span class="nicho-name">Academia</span>
+        <span class="nicho-desc">Musculação, funcional e crossfit</span>
+      </button>
+      <button type="button" role="listitem" onclick="selecionarNicho('advogado')">
+        <span class="nicho-icon">⚖️</span>
+        <span class="nicho-name">Advogado</span>
+        <span class="nicho-desc">Jurídico e consultoria</span>
+      </button>
+      <button type="button" role="listitem" onclick="selecionarNicho('dentista')">
+        <span class="nicho-icon">🦷</span>
+        <span class="nicho-name">Dentista</span>
+        <span class="nicho-desc">Odontologia e estética dental</span>
+      </button>
+      <button type="button" role="listitem" onclick="selecionarNicho('estetica')">
+        <span class="nicho-icon">💄</span>
+        <span class="nicho-name">Estética</span>
+        <span class="nicho-desc">Clínica e beleza</span>
+      </button>
+      <button type="button" role="listitem" onclick="selecionarNicho('mecanico')">
+        <span class="nicho-icon">🔧</span>
+        <span class="nicho-name">Mecânico</span>
+        <span class="nicho-desc">Oficina e auto center</span>
+      </button>
+      <button type="button" role="listitem" onclick="selecionarNicho('engenharia')">
+        <span class="nicho-icon">🏗️</span>
+        <span class="nicho-name">Engenharia</span>
+        <span class="nicho-desc">Obras e projetos</span>
+      </button>
+      <button type="button" role="listitem" onclick="selecionarNicho('fotografo')">
+        <span class="nicho-icon">📸</span>
+        <span class="nicho-name">Fotógrafo</span>
+        <span class="nicho-desc">Ensaios e eventos</span>
+      </button>
+      <button type="button" role="listitem" onclick="selecionarNicho('outro')">
+        <span class="nicho-icon">✨</span>
+        <span class="nicho-name">Outro</span>
+        <span class="nicho-desc">Personalize do zero</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Preview do site gerado -->
+<main id="site-preview" style="display:none;" aria-live="polite"></main>
+
+<!-- Barra flutuante quando o site está ativo -->
+<div id="preview-bar" class="preview-bar" hidden>
+  <button type="button" onclick="trocarNicho()" class="preview-btn preview-btn-ghost">
+    ← Trocar nicho
+  </button>
+  <span id="preview-nome" class="preview-name"></span>
+  <a href="#" id="preview-wa" class="preview-btn preview-btn-wa" target="_blank" rel="noopener">
+    WhatsApp
+  </a>
+</div>
+
+<!-- WhatsApp float (só quando preview ativo) -->
+<a href="#" id="whatsapp-float" class="whatsapp-float" aria-label="Falar no WhatsApp" hidden>💬</a>
+
+<!-- Scripts -->
+<script src="js/nichos.js"></script>
+<script src="js/blocos.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

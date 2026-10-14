@@ -1,0 +1,107 @@
+/* ============================================
+   DASHBOARD — Estilos Específicos
+   ============================================ */
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.dash-card {
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dash-card .dash-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.dash-card .dash-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dash-card .dash-label {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+.dash-card .dash-accent {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
+.dash-accent-pink {
+  background: var(--accent-pink);
+}
+
+.dash-accent-lilas {
+  background: var(--accent);
+}
+
+.dash-accent-rose {
+  background: var(--primary);
+}
+
+.dashboard-section {
+  margin-bottom: 32px;
+}
+
+.dashboard-section h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.proximos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.proximo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.proximo-item .proximo-icon {
+  font-size: 24px;
+}
+
+.proximo-item .proximo-info {
+  flex: 1;
+}
+
+.proximo-item .proximo-info strong {
+  display: block;
+  font-size: 14px;
+}
+
+.proximo-item .proximo-info span {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.proximo-item .proximo-data {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--primary);
+}

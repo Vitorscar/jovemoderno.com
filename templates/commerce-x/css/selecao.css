@@ -1,0 +1,132 @@
+/* ============================================================
+   COMMERCE X — TELA DE SELEÇÃO DE NICHO (index.html)
+   ============================================================ */
+
+.page-index {
+    background: var(--bg-primary);
+    min-height: 100vh;
+}
+.particles-bg {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(108,92,231,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 70%, rgba(253,121,168,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 50%, rgba(0,206,201,0.04) 0%, transparent 60%);
+}
+.hero-select {
+    text-align: center; padding: 5rem 1.5rem 2rem;
+    position: relative; z-index: 1;
+}
+.hero-badge {
+    display: inline-block; padding: 0.4rem 1.2rem;
+    background: var(--glass-bg); backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl); font-size: 0.9rem;
+    font-weight: 600; color: var(--text-secondary); margin-bottom: 1.5rem;
+}
+.hero-title { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; margin-bottom: 1rem; }
+.hero-subtitle {
+    font-size: 1.15rem; color: var(--text-secondary); max-width: 550px;
+    margin: 0 auto; line-height: 1.7;
+}
+.hero-subtitle strong { color: var(--theme-primary); }
+.scroll-hint {
+    margin-top: 3rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: var(--text-muted); font-size: 0.85rem;
+}
+
+/* ---------- NICHE GRID ---------- */
+.niche-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; z-index: 1;
+}
+.niche-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.8rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+    display: flex; flex-direction: column; gap: 1rem;
+    box-shadow: var(--card-shadow);
+}
+.niche-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    border-color: var(--theme-primary);
+}
+.niche-card::before {
+    content: '';
+    position: absolute; top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: var(--theme-gradient);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0; pointer-events: none;
+}
+.niche-card:hover::before { opacity: 0.03; }
+.niche-card-icon {
+    font-size: 3.5rem; position: relative; z-index: 1;
+    transition: transform 0.4s ease;
+}
+.niche-card:hover .niche-card-icon { transform: scale(1.15) rotate(-5deg); }
+.niche-card h3 { font-size: 1.4rem; font-weight: 700; position: relative; z-index: 1; }
+.niche-card p { color: var(--text-secondary); font-size: 0.95rem; position: relative; z-index: 1; }
+.niche-card-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.65rem 1.4rem;
+    background: var(--theme-gradient);
+    color: #fff; border: none; border-radius: var(--radius-xl);
+    font-weight: 600; cursor: pointer; font-size: 0.9rem;
+    transition: all var(--transition);
+    text-decoration: none;
+    align-self: flex-start;
+    position: relative; z-index: 1;
+}
+.niche-card-btn:hover { transform: scale(1.04); }
+.niche-card-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-radius: var(--radius); position: relative; z-index: 1;
+}
+
+/* ---------- PREVIEW MODAL ---------- */
+.preview-modal {
+    position: fixed; inset: 0; z-index: 5000;
+    background: var(--overlay);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+.preview-modal.open { opacity: 1; pointer-events: auto; }
+.preview-content {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    max-width: 440px; width: 90%;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.3);
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.35s ease;
+}
+.preview-modal.open .preview-content { transform: translateY(0); }
+.preview-close {
+    position: absolute; top: 12px; right: 18px;
+    font-size: 1.8rem; cursor: pointer; color: var(--text-muted);
+}
+.preview-icon { font-size: 4rem; margin-bottom: 0.5rem; }
+.preview-colors { display: flex; gap: 8px; justify-content: center; margin: 1rem 0; }
+.preview-color-dot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .niche-grid { grid-template-columns: 1fr; padding: 1rem; }
+    .hero-title { font-size: 2rem; }
+    .hero-select { padding: 3rem 1rem 1.5rem; }
+}

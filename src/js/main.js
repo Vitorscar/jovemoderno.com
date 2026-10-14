@@ -31,7 +31,7 @@ const wa = (msg) =>
 $$('[data-wa]').forEach((a) => {
   a.href = wa(
     a.dataset.wa ||
-    'Olá! Vim pelo site da JOVEMODERNO e gostaria de pedir um orçamento.'
+    'Hi! I came from the JOVEMODERNO website and would like a quote.'
   );
   a.target = '_blank';
   a.rel = 'noopener noreferrer';
@@ -177,17 +177,16 @@ if (toTop) {
 const out = $('#typed');
 
 if (out) {
-  const html = `<span class="c">// sua ideia, em produção</span>
-<span class="k">const</span> projeto = {
-  cliente: <span class="s">"você"</span>,
-  entrega: [<span class="s">"site"</span>, <span class="s">"sistema"</span>, <span class="s">"dados"</span>],
-  base: <span class="s">"Brasília, DF"</span>,
-  atende: <span class="s">"todo o Brasil"</span>
+  const html = `<span class="c">// your idea, in production</span>
+<span class="k">const</span> project = {
+  client: <span class="s">"you"</span>,
+  deliver: [<span class="s">"site"</span>, <span class="s">"system"</span>, <span class="s">"data"</span>],
+  based: <span class="s">"Brazil"</span>,
+  serves: <span class="s">"worldwide"</span>
 };
 
-<span class="k">await</span> jovemoderno.<span class="k">desenvolver</span>(projeto);
-<span class="c">// pronto para usar ✓</span>`;
-
+<span class="k">await</span> jovemoderno.<span class="k">build</span>(project);
+<span class="c">// ready to use ✓</span>`;
   const render = (i, withCaret = true) => {
     out.innerHTML =
       html.slice(0, i) + (withCaret ? '<span class="caret"></span>' : '');
@@ -277,14 +276,9 @@ window.visualizarTemplate = (categoria, modelo) => {
 /* ---------- 13. Catálogo — quero esse site ---------- */
 /* Nova assinatura: (modelo, tier). O preço vive só na seção #precos. */
 window.queroEsseSite = (modelo, tier, _legado) => {
-  /* _legado: aceita o 3º argumento (preço) por compatibilidade com
-     chamadas antigas. É ignorado — o preço agora está só em #precos. */
-
-  const pacote = tier ? ` (pacote ${tier})` : '';
-
+  const pacote = tier ? ` (${tier} package)` : '';
   const msg =
-    `Olá! Tenho interesse no modelo "${modelo}"${pacote} da JOVEMODERNO.\n\n` +
-    `Pode me contar como funciona a personalização e o prazo de entrega?`;
-
+    `Hi! I'm interested in the "${modelo}" template${pacote} from JOVEMODERNO.\n\n` +
+    `Could you tell me how the customization works and the delivery timeline?`;
   window.open(wa(msg), '_blank', 'noopener');
 };

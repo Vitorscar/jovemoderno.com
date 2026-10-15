@@ -1,22 +1,22 @@
 /* =========================================================
    JOVEMODERNO — main.js
    ---------------------------------------------------------
-   1.  Utilitários
+   1.  Utilities
    2.  WhatsApp
-   3.  Menu mobile
-   4.  Filtro do portfólio
-   5.  Header scrolled
+   3.  Mobile menu
+   4.  Portfolio filter
+   5.  Header on scroll
    6.  Scroll reveal
-   7.  Voltar ao topo
-   8.  Código digitado (hero)
-   9.  Ano no rodapé
-   10. Calculadora TopPrint
-   11. Smooth scroll interno
-   12. Catálogo — visualizar template
-   13. Catálogo — quero esse site
+   7.  Back to top
+   8.  Hero typed code
+   9.  Footer year
+   10. TopPrint calculator
+   11. Smooth internal scroll
+   12. Catalog — view template
+   13. Catalog — inquire about a template
    ========================================================= */
 
-/* ---------- 1. Utilitários ---------- */
+/* ---------- 1. Utilities ---------- */
 const $  = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
@@ -37,9 +37,9 @@ $$('[data-wa]').forEach((a) => {
   a.rel = 'noopener noreferrer';
 });
 
-/* ---------- 3. Menu mobile ---------- */
+/* ---------- 3. Mobile menu ---------- */
 const burger = $('.burger');
-const menu   = $('#menu-principal') || $('.nav ul');
+const menu   = $('#main-menu') || $('#menu-principal') || $('.nav ul');
 
 if (burger && menu) {
   const closeMenu = () => {
@@ -70,7 +70,7 @@ if (burger && menu) {
   });
 }
 
-/* ---------- 4. Filtro do portfólio ---------- */
+/* ---------- 4. Portfolio filter ---------- */
 const tabs       = $$('.tab');
 const cards      = $$('.card[data-cat]');
 const emptyState = $('.empty-state');
@@ -94,7 +94,7 @@ tabs.forEach((tab) => {
   });
 });
 
-/* ---------- 5. Header scrolled ---------- */
+/* ---------- 5. Header on scroll ---------- */
 const header = $('header');
 let headerTick = false;
 
@@ -142,7 +142,7 @@ if (revealEls.length) {
   }
 }
 
-/* ---------- 7. Voltar ao topo ---------- */
+/* ---------- 7. Back to top ---------- */
 const toTop = $('.to-top');
 
 if (toTop) {
@@ -173,7 +173,7 @@ if (toTop) {
   });
 }
 
-/* ---------- 8. Código digitado no hero ---------- */
+/* ---------- 8. Hero typed code ---------- */
 const out = $('#typed');
 
 if (out) {
@@ -187,6 +187,7 @@ if (out) {
 
 <span class="k">await</span> jovemoderno.<span class="k">build</span>(project);
 <span class="c">// ready to use ✓</span>`;
+
   const render = (i, withCaret = true) => {
     out.innerHTML =
       html.slice(0, i) + (withCaret ? '<span class="caret"></span>' : '');
@@ -219,38 +220,39 @@ if (out) {
   }
 }
 
-/* ---------- 9. Ano no rodapé ---------- */
+/* ---------- 9. Footer year ---------- */
 $$('.year').forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-/* ---------- 10. Calculadora TopPrint ---------- */
+/* ---------- 10. TopPrint calculator ---------- */
 const calc = $('#calc');
 
 if (calc) {
-  const preco  = { cartao: 0.35, folder: 0.9, banner: 38 };
-  const select = calc.querySelector('select');
-  const input  = calc.querySelector('input');
-  const output = calc.querySelector('output');
+  /* Print pricing in USD — per unit */
+  const pricing = { card: 0.35, folder: 0.9, banner: 38 };
+  const select  = calc.querySelector('select');
+  const input   = calc.querySelector('input');
+  const output  = calc.querySelector('output');
 
-  const upd = () => {
-    const t = select?.value ?? 'cartao';
-    const q = Math.max(1, Number(input?.value) || 1);
-    const total = (preco[t] ?? 0) * q;
+  const update = () => {
+    const type = select?.value ?? 'card';
+    const qty  = Math.max(1, Number(input?.value) || 1);
+    const total = (pricing[type] ?? 0) * qty;
 
     if (output) {
-      output.textContent = total.toLocaleString('pt-BR', {
+      output.textContent = total.toLocaleString('en-US', {
         style: 'currency',
-        currency: 'BRL',
+        currency: 'USD',
       });
     }
   };
 
-  calc.addEventListener('input', upd);
-  upd();
+  calc.addEventListener('input', update);
+  update();
 }
 
-/* ---------- 11. Smooth scroll interno ---------- */
+/* ---------- 11. Smooth internal scroll ---------- */
 $$('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
     const id = anchor.getAttribute('href');
@@ -267,18 +269,28 @@ $$('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-/* ---------- 12. Catálogo — visualizar template ---------- */
-/* Usado em modelos/index.html e categorias: botões que abrem o template */
-window.visualizarTemplate = (categoria, modelo) => {
-  window.location.href = `../templates/${categoria}/${modelo}.html`;
+/* ---------- 12. Catalog — view template ---------- */
+/* Used in work/index.html and category pages to open a template. */
+window.viewTemplate = (category, template) => {
+  window.location.href = `../templates/${category}/${template}.html`;
 };
 
-/* ---------- 13. Catálogo — quero esse site ---------- */
-/* Nova assinatura: (modelo, tier). O preço vive só na seção #precos. */
-window.queroEsseSite = (modelo, tier, _legado) => {
-  const pacote = tier ? ` (${tier} package)` : '';
+/* Backwards-compatible alias (old PT-BR name) */
+window.visualizarTemplate = window.viewTemplate;
+
+/* ---------- 13. Catalog — inquire about a template ---------- */
+/* Signature: (model, tier).
+   The price lives only in the #pricing section, never in the card. */
+window.inquireAboutSite = (model, tier) => {
+  const tierLabel = tier ? ` (${tier} package)` : '';
+
   const msg =
-    `Hi! I'm interested in the "${modelo}" template${pacote} from JOVEMODERNO.\n\n` +
-    `Could you tell me how the customization works and the delivery timeline?`;
+    `Hi! I'm interested in the "${model}" template${tierLabel} from JOVEMODERNO.\n\n` +
+    `Could you tell me how customization works and the delivery timeline?`;
+
   window.open(wa(msg), '_blank', 'noopener');
 };
+
+/* Backwards-compatible alias (old PT-BR name — accepts and ignores a 3rd arg) */
+window.queroEsseSite = (model, tier, _legacy) =>
+  window.inquireAboutSite(model, tier);

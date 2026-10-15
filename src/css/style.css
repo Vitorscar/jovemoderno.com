@@ -1481,15 +1481,14 @@ th{color:var(--mut); font-weight:600; font-size:.86rem}
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
   color: #cfd6e4;
-  backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
 }
+.card-tier--basico   { color: #9fb3d1; border-color: rgba(159, 179, 209, 0.35); }
+.card-tier--premium  { color: #7dd3fc; border-color: rgba(125, 211, 252, 0.45); }
+.card-tier--completo { color: #a5b4fc; border-color: rgba(165, 180, 252, 0.45); }
+.card { position: relative; }
 
-.card-tier--basico    { color: #9fb3d1; border-color: rgba(159, 179, 209, 0.35); }
-.card-tier--premium   { color: #7dd3fc; border-color: rgba(125, 211, 252, 0.45); }
-.card-tier--completo  { color: #a5b4fc; border-color: rgba(165, 180, 252, 0.45); }
-
-.card { position: relative; } /* se ainda não for */
 
 /* ── Tier no topo dos pacotes de preço ──────────────────── */
 .preco-tier {
@@ -1563,4 +1562,26 @@ th{color:var(--mut); font-weight:600; font-size:.86rem}
     text-align: left;
   }
   .addon-price { justify-content: flex-start; }
+}
+/* Tier badge para "Coming soon" */
+.card-tier--soon {
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.4);
+  background: rgba(251, 191, 36, 0.08);
+}
+
+/* Card "Coming soon" — visual atenuado */
+.card--soon {
+  opacity: 0.72;
+  transition: opacity 0.25s ease;
+}
+.card--soon:hover {
+  opacity: 0.9;
+}
+.card--soon .card-main {
+  cursor: default;
+  pointer-events: none;
+}
+.card--soon .thumb {
+  filter: grayscale(40%) brightness(0.85);
 }
